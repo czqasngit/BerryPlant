@@ -56,19 +56,19 @@ pod 'Berry'
 
 ```
 post_install do |installer|
-FixBerryUmbrella()
+    FixBerryUmbrella()
 end
 
 
 def FixBerryUmbrella
 berry_unbrella_file_path = (Dir::pwd + '/Pods/Headers/Public/Berry/Berry-umbrella.h')
 File.open(berry_unbrella_file_path,"r:utf-8") do |lines|
-buffer = lines.read
-buffer = buffer.gsub("decode.h","WebP/decode.h")
-buffer = buffer.gsub("encode.h","WebP/encode.h")
-buffer = buffer.gsub("types.h","WebP/types.h")
-File.open(berry_unbrella_file_path,"w"){|l|
-l.write(buffer)
+    buffer = lines.read
+    buffer = buffer.gsub("decode.h","WebP/decode.h")
+    buffer = buffer.gsub("encode.h","WebP/encode.h")
+    buffer = buffer.gsub("types.h","WebP/types.h")
+    File.open(berry_unbrella_file_path,"w"){|l|
+    l.write(buffer)
 }
 end
 ```
