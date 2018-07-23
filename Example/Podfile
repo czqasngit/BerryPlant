@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'BerryPlant_Example' do
+  pod 'BerryPlant', :path => '../'
+
+  target 'BerryPlant_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
