@@ -26,7 +26,7 @@
 		BE49AFF7A6F63F45292E0B283323159A /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = 0187AD0308AE34E197B0045B257B322F /* types.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		CAD9FD49DE638A7EB3617EA499066F48 /* BerryImageFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D69CA75D445AEF92A6219DF4362E0A3 /* BerryImageFormat.swift */; };
 		E3F4F5901A0681E0DC62859A4AE6BE3A /* BerryAPNGStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F91C036C52318FA452F14FFE2C657C /* BerryAPNGStructure.swift */; };
-		F0CC40468CC2ACAA0932BEB7A5705635 /* BerryAnimateImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4375652DAA5ACEC408C7C9633728A844 /* BerryAnimateImage.swift */; };
+		F0CC40468CC2ACAA0932BEB7A5705635 /* BerryAnimateImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4375652DAA5ACEC408C7C9633728A844 /* BerryAnimateImageView.swift */; };
 		FA2E37990E16EF4A7A36C493E1250E77 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9C5B130AE15698DB80E28FB353A669 /* String+Extensions.swift */; };
 		FD639BD8FDF728933019FD5EB95809D4 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E4603DD23B5A5230F5F3D09A5C4015 /* Data+Extensions.swift */; };
 		FF40B019E1659B927AA5D7B49D0282DB /* Berry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670AE5006554555351382D62EF2FF75 /* Berry.swift */; };
@@ -65,27 +65,27 @@
 		314F0F136ED2242659A4B4677FF212CC /* BerryImageProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BerryImageProvider.swift; sourceTree = "<group>"; };
 		33EDA3549B3FDF996F9CFD9F26016F18 /* Pods-BerryPlant_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BerryPlant_Tests-resources.sh"; sourceTree = "<group>"; };
 		37FD97ECCD7417CF8E92B97D2AF154BF /* decode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = decode.h; path = BerryPlant/Library/WebP.framework/Headers/decode.h; sourceTree = "<group>"; };
-		4375652DAA5ACEC408C7C9633728A844 /* BerryAnimateImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BerryAnimateImage.swift; sourceTree = "<group>"; };
+		4375652DAA5ACEC408C7C9633728A844 /* BerryAnimateImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BerryAnimateImageView.swift; sourceTree = "<group>"; };
 		45CF626CDF896672517A2DD817751E16 /* Pods-BerryPlant_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BerryPlant_Example.modulemap"; sourceTree = "<group>"; };
 		4632C52AB4A4CFFED8B9B6738C880921 /* Pods-BerryPlant_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BerryPlant_Example-umbrella.h"; sourceTree = "<group>"; };
 		48F042302F3036A961D614A39D37F519 /* BerryPlant-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BerryPlant-prefix.pch"; sourceTree = "<group>"; };
 		51E84E06B13FB6550BE9AEF0F6EF9AC7 /* BerryAPNGDecoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BerryAPNGDecoder.swift; sourceTree = "<group>"; };
-		526B8EE8E1A30E12F1A9C0F37171578B /* libPods-BerryPlant_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-BerryPlant_Example.a"; path = "libPods-BerryPlant_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		526B8EE8E1A30E12F1A9C0F37171578B /* libPods-BerryPlant_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BerryPlant_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B23E40B3C25298DF00E524AB53751BB /* BerryTransaction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BerryTransaction.swift; sourceTree = "<group>"; };
 		6511AE2AAA1E08ABBD70422059668F96 /* Pods-BerryPlant_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BerryPlant_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		6762FD647B95C10C2C9F7DA7225DAFC6 /* BerryPlant.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = BerryPlant.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		6762FD647B95C10C2C9F7DA7225DAFC6 /* BerryPlant.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = BerryPlant.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		74F91C036C52318FA452F14FFE2C657C /* BerryAPNGStructure.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BerryAPNGStructure.swift; sourceTree = "<group>"; };
 		7A11F524AF388910F31036D806D3D91D /* WebP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebP.framework; path = BerryPlant/Library/WebP.framework; sourceTree = "<group>"; };
-		7EE5ABEC76A2EC8C30333DA8202C9764 /* libPods-BerryPlant_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-BerryPlant_Tests.a"; path = "libPods-BerryPlant_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EE5ABEC76A2EC8C30333DA8202C9764 /* libPods-BerryPlant_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BerryPlant_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F1B19E7D98FE226708E91C9724F50BF /* BerryPlant.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = BerryPlant.modulemap; path = ../../Headers/Public/BerryPlant/BerryPlant.modulemap; sourceTree = "<group>"; };
-		85541ACD85640C8DE5744110436EDC01 /* libBerryPlant.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libBerryPlant.a; path = libBerryPlant.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		85541ACD85640C8DE5744110436EDC01 /* libBerryPlant.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBerryPlant.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8670AE5006554555351382D62EF2FF75 /* Berry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Berry.swift; path = BerryPlant/Classes/Berry.swift; sourceTree = "<group>"; };
 		896F8DC618DE28C81E8FF36E041CD774 /* BerryPlant-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "BerryPlant-umbrella.h"; path = "../../Headers/Public/BerryPlant/BerryPlant-umbrella.h"; sourceTree = "<group>"; };
 		8A28AF88D971C5AF4E5430DFB2708E8F /* Pods-BerryPlant_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BerryPlant_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		920CAE169F6335A983830D36C8BDBCB2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		920CAE169F6335A983830D36C8BDBCB2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9411D9BD09BE2116E9F284C5AB03229B /* Pods-BerryPlant_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BerryPlant_Example-frameworks.sh"; sourceTree = "<group>"; };
-		94FD7B08BA77A11A339B5CA09485FC52 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		94FD7B08BA77A11A339B5CA09485FC52 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		A222E38184DE5BB380B7BAEF38C36D69 /* Pods-BerryPlant_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BerryPlant_Example-resources.sh"; sourceTree = "<group>"; };
 		B7693BA62AF1B46C57E0200048942EBF /* BerryGIFDecoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BerryGIFDecoder.swift; sourceTree = "<group>"; };
 		BA9C5B130AE15698DB80E28FB353A669 /* String+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
@@ -170,9 +170,8 @@
 		26CD951B8A6D2C15DA870995A76EA940 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				4375652DAA5ACEC408C7C9633728A844 /* BerryAnimateImage.swift */,
+				4375652DAA5ACEC408C7C9633728A844 /* BerryAnimateImageView.swift */,
 			);
-			name = UI;
 			path = UI;
 			sourceTree = "<group>";
 		};
@@ -185,7 +184,6 @@
 				88DBADC400E03F363E2E9C1A9C6B4177 /* GIF */,
 				F91EA1BB73603B68DF8E6643D41372EC /* WebP */,
 			);
-			name = Decoder;
 			path = Decoder;
 			sourceTree = "<group>";
 		};
@@ -207,7 +205,6 @@
 				0D1D3065B207B74EA5CC299E1472456A /* Integer+Exensions.swift */,
 				BA9C5B130AE15698DB80E28FB353A669 /* String+Extensions.swift */,
 			);
-			name = Extensions;
 			path = Extensions;
 			sourceTree = "<group>";
 		};
@@ -244,7 +241,6 @@
 			children = (
 				B7693BA62AF1B46C57E0200048942EBF /* BerryGIFDecoder.swift */,
 			);
-			name = GIF;
 			path = GIF;
 			sourceTree = "<group>";
 		};
@@ -273,7 +269,6 @@
 				2D69CA75D445AEF92A6219DF4362E0A3 /* BerryImageFormat.swift */,
 				F8C7B029EC6D9181DDECD86E2773BC15 /* BerryProxy.swift */,
 			);
-			name = Unilitys;
 			path = Unilitys;
 			sourceTree = "<group>";
 		};
@@ -282,7 +277,6 @@
 			children = (
 				C6A21DB569E5193892C5A0F7115BF793 /* BerryDefaultDecoder.swift */,
 			);
-			name = Default;
 			path = Default;
 			sourceTree = "<group>";
 		};
@@ -317,7 +311,6 @@
 				51E84E06B13FB6550BE9AEF0F6EF9AC7 /* BerryAPNGDecoder.swift */,
 				74F91C036C52318FA452F14FFE2C657C /* BerryAPNGStructure.swift */,
 			);
-			name = APNG;
 			path = APNG;
 			sourceTree = "<group>";
 		};
@@ -343,7 +336,6 @@
 			children = (
 				D4EFE9FE00A2844CF28E9F4B65DD99EF /* BerryWebpDecoder.swift */,
 			);
-			name = WebP;
 			path = WebP;
 			sourceTree = "<group>";
 		};
@@ -485,7 +477,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/BerryPlant/BerryPlant.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/BerryPlant/BerryPlant-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
-			showEnvVarsInLog = 1;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -503,7 +494,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF40B019E1659B927AA5D7B49D0282DB /* Berry.swift in Sources */,
-				F0CC40468CC2ACAA0932BEB7A5705635 /* BerryAnimateImage.swift in Sources */,
+				F0CC40468CC2ACAA0932BEB7A5705635 /* BerryAnimateImageView.swift in Sources */,
 				7A9750832954EA69CF98A1227658EE0E /* BerryAPNGDecoder.swift in Sources */,
 				E3F4F5901A0681E0DC62859A4AE6BE3A /* BerryAPNGStructure.swift in Sources */,
 				3220510480533DAF7637C9899896CE00 /* BerryDefaultDecoder.swift in Sources */,

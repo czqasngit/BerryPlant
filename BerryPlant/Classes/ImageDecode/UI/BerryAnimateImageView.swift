@@ -17,7 +17,7 @@ public struct BerryAnimateFrame {
 }
 
 //MARK: BerryAnimateImage
-public class BerryAnimateImage: UIImageView {
+public class BerryAnimateImageView: UIImageView {
     
     public enum Policy {
         case noCache
@@ -117,7 +117,7 @@ public class BerryAnimateImage: UIImageView {
                 }
             }
             let proxy = BerryProxy(target: self)
-            self.link = CADisplayLink(target: proxy, selector: #selector(BerryAnimateImage.render))
+            self.link = CADisplayLink(target: proxy, selector: #selector(BerryAnimateImageView.render))
             self.link!.add(to: RunLoop.main, forMode: RunLoopMode.commonModes)
         }
         
@@ -125,8 +125,8 @@ public class BerryAnimateImage: UIImageView {
 }
 
 //MARK: 
-extension BerryAnimateImage: UIAsyncable {}
-extension Berry where Base == BerryAnimateImage {
+extension BerryAnimateImageView: UIAsyncable {}
+extension Berry where Base == BerryAnimateImageView {
     func setImage(image: UIImage){
         self.submitTransaction {
             self.base.image = image

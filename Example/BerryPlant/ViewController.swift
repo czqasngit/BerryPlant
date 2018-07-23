@@ -12,7 +12,7 @@ import BerryPlant
 class ViewController: UIViewController {
 
     
-    var imageView: BerryAnimateImage!
+    var imageView: BerryAnimateImageView!
     var data: Data!
     public func configure(with data: Data) {
         self.data = data
@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     }
     
     func setup(){
-        self.imageView = BerryAnimateImage(data, frame: CGRect(x: 0, y: 200, width: self.view.frame.size.width, height: 300), cache: BerryAnimateImage.Policy.noCache)
+        self.imageView = BerryAnimateImageView(data, frame: CGRect(x: 0, y: 200, width: self.view.frame.size.width, height: 300), cache: BerryAnimateImageView.Policy.noCache)
         self.view.addSubview(self.imageView)
         self.imageView.contentMode = .scaleAspectFit
         self.imageView.animationRepeatCount = 0
