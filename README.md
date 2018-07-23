@@ -1,6 +1,6 @@
 # BerryPlant
 
-[![CI Status](https://img.shields.io/travis/czqasngit/BerryPlant.svg?style=flat)](https://travis-ci.org/czqasngit/BerryPlant)
+[![CI Status](https://img.shields.io/travis/czqasngit/BerryPlant.svg?style=flat)](https://travis-ci.org/czqasngit/BerryPlant)&nbsp;
 [![Version](https://img.shields.io/cocoapods/v/BerryPlant.svg?style=flat)](https://cocoapods.org/pods/BerryPlant)
 [![License](https://img.shields.io/cocoapods/l/BerryPlant.svg?style=flat)](https://cocoapods.org/pods/BerryPlant)
 [![Platform](https://img.shields.io/cocoapods/p/BerryPlant.svg?style=flat)](https://cocoapods.org/pods/BerryPlant)
@@ -70,6 +70,7 @@ File.open(berry_unbrella_file_path,"r:utf-8") do |lines|
     File.open(berry_unbrella_file_path,"w"){|l|
     l.write(buffer)
 }
+end
 end
 ```
 
