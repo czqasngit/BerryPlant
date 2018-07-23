@@ -1,9 +1,9 @@
 # BerryPlant
 
-[![CI Status](https://img.shields.io/travis/czqasngit/BerryPlant.svg?style=flat)](https://travis-ci.org/czqasngit/BerryPlant)
-[![Version](https://img.shields.io/cocoapods/v/BerryPlant.svg?style=flat)](https://cocoapods.org/pods/BerryPlant)
-[![License](https://img.shields.io/cocoapods/l/BerryPlant.svg?style=flat)](https://cocoapods.org/pods/BerryPlant)
-[![Platform](https://img.shields.io/cocoapods/p/BerryPlant.svg?style=flat)](https://cocoapods.org/pods/BerryPlant)
+![CI Status](https://img.shields.io/travis/czqasngit/BerryPlant.svg?style=flat)
+![Version](https://img.shields.io/cocoapods/v/BerryPlant.svg?style=flat)
+![License](https://img.shields.io/cocoapods/l/BerryPlant.svg?style=flat)
+![Platform](https://img.shields.io/cocoapods/p/BerryPlant.svg?style=flat)
 
 A swift image kit for iOS to display/decode WebP,APNG,GIF,PNG,JPG and more.
 Decode image on async thread and render when runloop idle.
