@@ -61,7 +61,7 @@ end
 
 
 def FixBerryUmbrella
-berry_unbrella_file_path = (Dir::pwd + '/Pods/Headers/Public/Berry/Berry-umbrella.h')
+berry_unbrella_file_path = (Dir::pwd + '/Pods/Headers/Public/BerryPlant/BerryPlant-umbrella.h')
 File.open(berry_unbrella_file_path,"r:utf-8") do |lines|
     buffer = lines.read
     buffer = buffer.gsub("decode.h","WebP/decode.h")
