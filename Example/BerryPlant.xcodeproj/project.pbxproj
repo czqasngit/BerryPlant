@@ -7,14 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D92CF3A61977DF86C393721 /* libPods-BerryPlant_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D240CF43F896B5D77CC50729 /* libPods-BerryPlant_Tests.a */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		8FC1D7A2B6DD0CFAE8736715 /* Pods_BerryPlant_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37826D6FA015447F4E12F9EF /* Pods_BerryPlant_Tests.framework */; };
-		ED3DEDB008B4D6FAF40978B3 /* Pods_BerryPlant_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91126E1A3C8E9F54A41F4ABE /* Pods_BerryPlant_Example.framework */; };
+		640A044BB51CD40E17AF2161 /* libPods-BerryPlant_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 676B26E809A79461033A0624 /* libPods-BerryPlant_Example.a */; };
+		C3ECB89B2105BD660078A695 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3ECB8922105BD650078A695 /* 1.jpg */; };
+		C3ECB89C2105BD660078A695 /* basketball.gif in Resources */ = {isa = PBXBuildFile; fileRef = C3ECB8932105BD650078A695 /* basketball.gif */; };
+		C3ECB89D2105BD660078A695 /* apng.gif in Resources */ = {isa = PBXBuildFile; fileRef = C3ECB8942105BD650078A695 /* apng.gif */; };
+		C3ECB89E2105BD660078A695 /* dance.apng in Resources */ = {isa = PBXBuildFile; fileRef = C3ECB8952105BD660078A695 /* dance.apng */; };
+		C3ECB89F2105BD660078A695 /* j.webp in Resources */ = {isa = PBXBuildFile; fileRef = C3ECB8962105BD660078A695 /* j.webp */; };
+		C3ECB8A02105BD660078A695 /* j.png in Resources */ = {isa = PBXBuildFile; fileRef = C3ECB8972105BD660078A695 /* j.png */; };
+		C3ECB8A12105BD660078A695 /* mm.apng in Resources */ = {isa = PBXBuildFile; fileRef = C3ECB8982105BD660078A695 /* mm.apng */; };
+		C3ECB8A22105BD660078A695 /* kk.gif in Resources */ = {isa = PBXBuildFile; fileRef = C3ECB8992105BD660078A695 /* kk.gif */; };
+		C3ECB8A32105BD660078A695 /* dance.gif in Resources */ = {isa = PBXBuildFile; fileRef = C3ECB89A2105BD660078A695 /* dance.gif */; };
+		C3ECB8A52105BD750078A695 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3ECB8A42105BD750078A695 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,8 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		34300545A996D92810B31312 /* BerryPlant.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = BerryPlant.podspec; path = ../BerryPlant.podspec; sourceTree = "<group>"; };
-		37826D6FA015447F4E12F9EF /* Pods_BerryPlant_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BerryPlant_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34300545A996D92810B31312 /* BerryPlant.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = BerryPlant.podspec; path = ../BerryPlant.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		607FACD01AFB9204008FA782 /* BerryPlant_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BerryPlant_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,11 +49,22 @@
 		607FACE51AFB9204008FA782 /* BerryPlant_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BerryPlant_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		7E98C22ADC33F69AA8CACCF8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		91126E1A3C8E9F54A41F4ABE /* Pods_BerryPlant_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BerryPlant_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		676B26E809A79461033A0624 /* libPods-BerryPlant_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BerryPlant_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E98C22ADC33F69AA8CACCF8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		93018783ADC20FE609C6CE3E /* Pods-BerryPlant_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BerryPlant_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BerryPlant_Tests/Pods-BerryPlant_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		C3ECB8922105BD650078A695 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		C3ECB8932105BD650078A695 /* basketball.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = basketball.gif; sourceTree = "<group>"; };
+		C3ECB8942105BD650078A695 /* apng.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = apng.gif; sourceTree = "<group>"; };
+		C3ECB8952105BD660078A695 /* dance.apng */ = {isa = PBXFileReference; lastKnownFileType = file; path = dance.apng; sourceTree = "<group>"; };
+		C3ECB8962105BD660078A695 /* j.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = j.webp; sourceTree = "<group>"; };
+		C3ECB8972105BD660078A695 /* j.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = j.png; sourceTree = "<group>"; };
+		C3ECB8982105BD660078A695 /* mm.apng */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mm.apng; sourceTree = "<group>"; };
+		C3ECB8992105BD660078A695 /* kk.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = kk.gif; sourceTree = "<group>"; };
+		C3ECB89A2105BD660078A695 /* dance.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dance.gif; sourceTree = "<group>"; };
+		C3ECB8A42105BD750078A695 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		D240CF43F896B5D77CC50729 /* libPods-BerryPlant_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BerryPlant_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D66138DF4875D8F54A25C32A /* Pods-BerryPlant_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BerryPlant_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BerryPlant_Tests/Pods-BerryPlant_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		DC14CAF9059F1D29C6247035 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		DC14CAF9059F1D29C6247035 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		EC6342D6328A7CA09A74A0D3 /* Pods-BerryPlant_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BerryPlant_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BerryPlant_Example/Pods-BerryPlant_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		F00A7E45849E840548D1F4E5 /* Pods-BerryPlant_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BerryPlant_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-BerryPlant_Example/Pods-BerryPlant_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -54,7 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED3DEDB008B4D6FAF40978B3 /* Pods_BerryPlant_Example.framework in Frameworks */,
+				640A044BB51CD40E17AF2161 /* libPods-BerryPlant_Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FC1D7A2B6DD0CFAE8736715 /* Pods_BerryPlant_Tests.framework in Frameworks */,
+				3D92CF3A61977DF86C393721 /* libPods-BerryPlant_Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,8 +92,8 @@
 		306EF2DB65425DAAB3A42371 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				91126E1A3C8E9F54A41F4ABE /* Pods_BerryPlant_Example.framework */,
-				37826D6FA015447F4E12F9EF /* Pods_BerryPlant_Tests.framework */,
+				676B26E809A79461033A0624 /* libPods-BerryPlant_Example.a */,
+				D240CF43F896B5D77CC50729 /* libPods-BerryPlant_Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -113,8 +133,10 @@
 		607FACD21AFB9204008FA782 /* Example for BerryPlant */ = {
 			isa = PBXGroup;
 			children = (
+				C3ECB8912105BD5D0078A695 /* Resources */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				C3ECB8A42105BD750078A695 /* TableViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -159,6 +181,22 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		C3ECB8912105BD5D0078A695 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C3ECB8922105BD650078A695 /* 1.jpg */,
+				C3ECB8942105BD650078A695 /* apng.gif */,
+				C3ECB8932105BD650078A695 /* basketball.gif */,
+				C3ECB8952105BD660078A695 /* dance.apng */,
+				C3ECB89A2105BD660078A695 /* dance.gif */,
+				C3ECB8972105BD660078A695 /* j.png */,
+				C3ECB8962105BD660078A695 /* j.webp */,
+				C3ECB8992105BD660078A695 /* kk.gif */,
+				C3ECB8982105BD660078A695 /* mm.apng */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -170,7 +208,6 @@
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				CA7AD65CD4BE047506E9FF9A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -245,9 +282,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3ECB8A02105BD660078A695 /* j.png in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				C3ECB89B2105BD660078A695 /* 1.jpg in Resources */,
+				C3ECB8A12105BD660078A695 /* mm.apng in Resources */,
+				C3ECB8A32105BD660078A695 /* dance.gif in Resources */,
+				C3ECB89E2105BD660078A695 /* dance.apng in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				C3ECB89F2105BD660078A695 /* j.webp in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				C3ECB89D2105BD660078A695 /* apng.gif in Resources */,
+				C3ECB89C2105BD660078A695 /* basketball.gif in Resources */,
+				C3ECB8A22105BD660078A695 /* kk.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,24 +343,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CA7AD65CD4BE047506E9FF9A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BerryPlant_Example/Pods-BerryPlant_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BerryPlant/BerryPlant.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BerryPlant.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BerryPlant_Example/Pods-BerryPlant_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -323,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				C3ECB8A52105BD750078A695 /* TableViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,6 +499,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BerryPlant/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -485,6 +515,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BerryPlant/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";

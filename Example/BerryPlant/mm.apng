@@ -1,0 +1,2645 @@
+.PNGrequire 'xcodeproj'
+# require 'D acTL
+
+class Example 
+
+    #构造方法
+    def initialize(pathDir, projectName, groupName)
+        @pathDir = pathDir
+        @projectName = projectName
+        @groupName = groupName
+        #工程路径 
+        @project_path = pathDir + '/' + projectName
+        #工程对象
+        @project = nil
+        @target = nil 
+        @group = nil 
+        @files = []
+        @resources = []
+        @sourceTypes = ['.xib','.storyboard','.xcassets']
+
+    end
+
+    #打开工程
+    def setupProject()
+		@project = Xcodeproj::Project.open(@project_path)
+    end
+
+    #生成Target
+    def setupTarget()
+        @target = @project.new_target(:application, @groupName, :ios)
+    end
+
+    #生成group
+    def setupExampleGroup
+        @group = @project.main_group.new_group(@groupName,"./#@groupName/")
+    end
+
+    
+    #分类 
+    def classify(directory)
+        Dir::foreach(directory) do |filename| 
+            if File.directory?(directory + '/' + filename) && !filename.start_with?('.') && !filename.include?('xcassets') then
+                self.classify(directory + '/' + filename)
+            else 
+                if filename.start_with?('.') then
+                    #nothing to do
+                elsif @sourceTypes.include?(File.extname(filename)) then
+                    if File.exists?(directory + '/' + filename) then
+                        # puts directory + '/' + filename
+                        @resources << filename
+                        # @files << filename
+                    end
+                else
+                    if File.exists?(directory + '/' + filename) then
+                        # puts '>>>' + directory + '/' + filename
+                        @files << filename
+                    end
+                end
+            end
+        end
+
+    end
+
+    #配置工程
+    def configure
+        @target.build_configuration_list.set_setting('INFOPLIST_FILE', "./Example/Info.plist")
+        @target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '4.2'
+            config.build_settings['PRODUCT_NAME'] = '$(TARGET_NAME)'
+            config.build_settings['PRODUCT_BUNDLE_IDENTIFIER'] = 'com.taihe.XcodeprojTests'    
+        end
+    end
+    
+    #添加文件 
+    def addFileRefrence
+        file_references = []
+        @files.each { |filename|
+            file_references << @group.new_reference(filename)
+        }
+        @target.add_file_references(file_references)
+    end
+
+    #添加资源
+    def addResrouces
+        file_resources = []
+        @resources.each { |filename| 
+            file_resources << @group.new_reference(filename)
+        }
+        @target.add_resources(file_resources)
+    end
+
+
+    #执行
+	def exec()
+        self.setupProject()
+        self.setupTarget()
+        self.setupExampleGroup()
+        self.configure()
+        self.classify(@pathDir + '/' + @groupName)
+        self.addFileRefrence()
+        self.addResrouces()
+        
+        # @target.add_file_references([@group.new_reference("AppDelegate.swift"),
+		# @group.new_reference("ViewController.swift"),
+		# @group.new_reference("Info.plist"),
+	    # @group.new_reference("Base.lproj")])
+        # @target.add_resources([@group.new_reference("Assets.xcassets")])
+        
+
+        @project.save
+	end
+end
+
+example = Example.new('./XcodeprojTests','XcodeprojTests.xcodeproj','Example')
+example.exec()
+require 'xcodeproj'
+# require 'Dir'
+
+class Example
+    
+    #构造方法
+    def initialize(pathDir, projectName, groupName)
+        @pathDir = pathDir
+        @projectName = projectName
+        @groupName = groupName
+        #工程路径
+        @project_path = pathDir + '/' + projectName
+        #工程对象
+        @project = nil
+        @target = nil
+        @group = nil
+        @files = []
+        @resources = []
+        @sourceTypes = ['.xib','.storyboard','.xcassets']
+        
+    end
+    
+    #打开工程
+    def setupProject()
+        @project = Xcodeproj::Project.open(@project_path)
+    end
+    
+    #生成Target
+    def setupTarget()
+        @target = @project.new_target(:application, @groupName, :ios)
+    end
+    
+    #生成group
+    def setupExampleGroup
+        @group = @project.main_group.new_group(@groupName,"./#@groupName/")
+    end
+    
+    
+    #分类
+    def classify(directory)
+        Dir::foreach(directory) do |filename|
+            if File.directory?(directory + '/' + filename) && !filename.start_with?('.') && !filename.include?('xcassets') then
+                self.classify(directory + '/' + filename)
+                else
+                if filename.start_with?('.') then
+                    #nothing to do
+                    elsif @sourceTypes.include?(File.extname(filename)) then
+                    if File.exists?(directory + '/' + filename) then
+                        # puts directory + '/' + filename
+                        @resources << filename
+                        # @files << filename
+                    end
+                    else
+                    if File.exists?(directory + '/' + filename) then
+                        # puts '>>>' + directory + '/' + filename
+                        @files << filename
+                    end
+                end
+            end
+        end
+        
+    end
+    
+    #配置工程
+    def configure
+        @target.build_configuration_list.set_setting('INFOPLIST_FILE', "./Example/Info.plist")
+        @target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '4.2'
+            config.build_settings['PRODUCT_NAME'] = '$(TARGET_NAME)'
+            config.build_settings['PRODUCT_BUNDLE_IDENTIFIER'] = 'com.taihe.XcodeprojTests'
+        end
+    end
+    
+    #添加文件
+    def addFileRefrence
+        file_references = []
+        @files.each { |filename|
+            file_references << @group.new_reference(filename)
+        }
+        @target.add_file_references(file_references)
+    end
+    
+    #添加资源
+    def addResrouces
+        file_resources = []
+        @resources.each { |filename|
+            file_resources << @group.new_reference(filename)
+        }
+        @target.add_resources(file_resources)
+    end
+    
+    
+    #执行
+    def exec()
+        self.setupProject()
+        self.setupTarget()
+        self.setupExampleGroup()
+        self.configure()
+        self.classify(@pathDir + '/' + @groupName)
+        self.addFileRefrence()
+        self.addResrouces()
+        
+        # @target.add_file_references([@group.new_reference("AppDelegate.swift"),
+        # @group.new_reference("ViewController.swift"),
+        # @group.new_reference("Info.plist"),
+        # @group.new_reference("Base.lproj")])
+        # @target.add_resources([@group.new_reference("Assets.xcassets")])
+        
+        
+        @project.save
+    end
+end
+
+example = Example.new('./XcodeprojTests','XcodeprojTests.xcodeproj','Example')
+example.exec()
+require 'xcodeproj'
+# require 'Dir'
+
+class Example
+    
+    #构造方法
+    def initialize(pathDir, projectName, groupName)
+        @pathDir = pathDir
+        @projectName = projectName
+        @groupName = groupName
+        #工程路径
+        @project_path = pathDir + '/' + projectName
+        #工程对象
+        @project = nil
+        @target = nil
+        @group = nil
+        @files = []
+        @resources = []
+        @sourceTypes = ['.xib','.storyboard','.xcassets']
+        
+    end
+    
+    #打开工程
+    def setupProject()
+        @project = Xcodeproj::Project.open(@project_path)
+    end
+    
+    #生成Target
+    def setupTarget()
+        @target = @project.new_target(:application, @groupName, :ios)
+    end
+    
+    #生成group
+    def setupExampleGroup
+        @group = @project.main_group.new_group(@groupName,"./#@groupName/")
+    end
+    
+    
+    #分类
+    def classify(directory)
+        Dir::foreach(directory) do |filename|
+            if File.directory?(directory + '/' + filename) && !filename.start_with?('.') && !filename.include?('xcassets') then
+                self.classify(directory + '/' + filename)
+                else
+                if filename.start_with?('.') then
+                    #nothing to do
+                    elsif @sourceTypes.include?(File.extname(filename)) then
+                    if File.exists?(directory + '/' + filename) then
+                        # puts directory + '/' + filename
+                        @resources << filename
+                        # @files << filename
+                    end
+                    else
+                    if File.exists?(directory + '/' + filename) then
+                        # puts '>>>' + directory + '/' + filename
+                        @files << filename
+                    end
+                end
+            end
+        end
+        
+    end
+    
+    #配置工程
+    def configure
+        @target.build_configuration_list.set_setting('INFOPLIST_FILE', "./Example/Info.plist")
+        @target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '4.2'
+            config.build_settings['PRODUCT_NAME'] = '$(TARGET_NAME)'
+            config.build_settings['PRODUCT_BUNDLE_IDENTIFIER'] = 'com.taihe.XcodeprojTests'
+        end
+    end
+    
+    #添加文件
+    def addFileRefrence
+        file_references = []
+        @files.each { |filename|
+            file_references << @group.new_reference(filename)
+        }
+        @target.add_file_references(file_references)
+    end
+    
+    #添加资源
+    def addResrouces
+        file_resources = []
+        @resources.each { |filename|
+            file_resources << @group.new_reference(filename)
+        }
+        @target.add_resources(file_resources)
+    end
+    
+    
+    #执行
+    def exec()
+        self.setupProject()
+        self.setupTarget()
+        self.setupExampleGroup()
+        self.configure()
+        self.classify(@pathDir + '/' + @groupName)
+        self.addFileRefrence()
+        self.addResrouces()
+        
+        # @target.add_file_references([@group.new_reference("AppDelegate.swift"),
+        # @group.new_reference("ViewController.swift"),
+        # @group.new_reference("Info.plist"),
+        # @group.new_reference("Base.lproj")])
+        # @target.add_resources([@group.new_reference("Assets.xcassets")])
+        
+        
+        @project.save
+    end
+end
+
+example = Example.new('./XcodeprojTests','XcodeprojTests.xcodeproj','Example')
+example.exec()
+require 'xcodeproj'
+# require 'Dir'
+
+class Example
+    
+    #构造方法
+    def initialize(pathDir, projectName, groupName)
+        @pathDir = pathDir
+        @projectName = projectName
+        @groupName = groupName
+        #工程路径
+        @project_path = pathDir + '/' + projectName
+        #工程对象
+        @project = nil
+        @target = nil
+        @group = nil
+        @files = []
+        @resources = []
+        @sourceTypes = ['.xib','.storyboard','.xcassets']
+        
+    end
+    
+    #打开工程
+    def setupProject()
+        @project = Xcodeproj::Project.open(@project_path)
+    end
+    
+    #生成Target
+    def setupTarget()
+        @target = @project.new_target(:application, @groupName, :ios)
+    end
+    
+    #生成group
+    def setupExampleGroup
+        @group = @project.main_group.new_group(@groupName,"./#@groupName/")
+    end
+    
+    
+    #分类
+    def classify(directory)
+        Dir::foreach(directory) do |filename|
+            if File.directory?(directory + '/' + filename) && !filename.start_with?('.') && !filename.include?('xcassets') then
+                self.classify(directory + '/' + filename)
+                else
+                if filename.start_with?('.') then
+                    #nothing to do
+                    elsif @sourceTypes.include?(File.extname(filename)) then
+                    if File.exists?(directory + '/' + filename) then
+                        # puts directory + '/' + filename
+                        @resources << filename
+                        # @files << filename
+                    end
+                    else
+                    if File.exists?(directory + '/' + filename) then
+                        # puts '>>>' + directory + '/' + filename
+                        @files << filename
+                    end
+                end
+            end
+        end
+        
+    end
+    
+    #配置工程
+    def configure
+        @target.build_configuration_list.set_setting('INFOPLIST_FILE', "./Example/Info.plist")
+        @target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '4.2'
+            config.build_settings['PRODUCT_NAME'] = '$(TARGET_NAME)'
+            config.build_settings['PRODUCT_BUNDLE_IDENTIFIER'] = 'com.taihe.XcodeprojTests'
+        end
+    end
+    
+    #添加文件
+    def addFileRefrence
+        file_references = []
+        @files.each { |filename|
+            file_references << @group.new_reference(filename)
+        }
+        @target.add_file_references(file_references)
+    end
+    
+    #添加资源
+    def addResrouces
+        file_resources = []
+        @resources.each { |filename|
+            file_resources << @group.new_reference(filename)
+        }
+        @target.add_resources(file_resources)
+    end
+    
+    
+    #执行
+    def exec()
+        self.setupProject()
+        self.setupTarget()
+        self.setupExampleGroup()
+        self.configure()
+        self.classify(@pathDir + '/' + @groupName)
+        self.addFileRefrence()
+        self.addResrouces()
+        
+        # @target.add_file_references([@group.new_reference("AppDelegate.swift"),
+        # @group.new_reference("ViewController.swift"),
+        # @group.new_reference("Info.plist"),
+        # @group.new_reference("Base.lproj")])
+        # @target.add_resources([@group.new_reference("Assets.xcassets")])
+        
+        
+        @project.save
+    end
+end
+
+example = Example.new('./XcodeprojTests','XcodeprojTests.xcodeproj','Example')
+example.exec()
+require 'xcodeproj'
+# require 'Dir'
+
+class Example
+    
+    #构造方法
+    def initialize(pathDir, projectName, groupName)
+        @pathDir = pathDir
+        @projectName = projectName
+        @groupName = groupName
+        #工程路径
+        @project_path = pathDir + '/' + projectName
+        #工程对象
+        @project = nil
+        @target = nil
+        @group = nil
+        @files = []
+        @resources = []
+        @sourceTypes = ['.xib','.storyboard','.xcassets']
+        
+    end
+    
+    #打开工程
+    def setupProject()
+        @project = Xcodeproj::Project.open(@project_path)
+    end
+    
+    #生成Target
+    def setupTarget()
+        @target = @project.new_target(:application, @groupName, :ios)
+    end
+    
+    #生成group
+    def setupExampleGroup
+        @group = @project.main_group.new_group(@groupName,"./#@groupName/")
+    end
+    
+    
+    #分类
+    def classify(directory)
+        Dir::foreach(directory) do |filename|
+            if File.directory?(directory + '/' + filename) && !filename.start_with?('.') && !filename.include?('xcassets') then
+                self.classify(directory + '/' + filename)
+                else
+                if filename.start_with?('.') then
+                    #nothing to do
+                    elsif @sourceTypes.include?(File.extname(filename)) then
+                    if File.exists?(directory + '/' + filename) then
+                        # puts directory + '/' + filename
+                        @resources << filename
+                        # @files << filename
+                    end
+                    else
+                    if File.exists?(directory + '/' + filename) then
+                        # puts '>>>' + directory + '/' + filename
+                        @files << filename
+                    end
+                end
+            end
+        end
+        
+    end
+    
+    #配置工程
+    def configure
+        @target.build_configuration_list.set_setting('INFOPLIST_FILE', "./Example/Info.plist")
+        @target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '4.2'
+            config.build_settings['PRODUCT_NAME'] = '$(TARGET_NAME)'
+            config.build_settings['PRODUCT_BUNDLE_IDENTIFIER'] = 'com.taihe.XcodeprojTests'
+        end
+    end
+    
+    #添加文件
+    def addFileRefrence
+        file_references = []
+        @files.each { |filename|
+            file_references << @group.new_reference(filename)
+        }
+        @target.add_file_references(file_references)
+    end
+    
+    #添加资源
+    def addResrouces
+        file_resources = []
+        @resources.each { |filename|
+            file_resources << @group.new_reference(filename)
+        }
+        @target.add_resources(file_resources)
+    end
+    
+    
+    #执行
+    def exec()
+        self.setupProject()
+        self.setupTarget()
+        self.setupExampleGroup()
+        self.configure()
+        self.classify(@pathDir + '/' + @groupName)
+        self.addFileRefrence()
+        self.addResrouces()
+        
+        # @target.add_file_references([@group.new_reference("AppDelegate.swift"),
+        # @group.new_reference("ViewController.swift"),
+        # @group.new_reference("Info.plist"),
+        # @group.new_reference("Base.lproj")])
+        # @target.add_resources([@group.new_reference("Assets.xcassets")])
+        
+        
+        @project.save
+    end
+end
+
+example = Example.new('./XcodeprojTests','XcodeprojTests.xcodeproj','Example')
+example.exec()
+require 'xcodeproj'
+# require 'Dir'
+
+class Example
+    
+    #构造方法
+    def initialize(pathDir, projectName, groupName)
+        @pathDir = pathDir
+        @projectName = projectName
+        @groupName = groupName
+        #工程路径
+        @project_path = pathDir + '/' + projectName
+        #工程对象
+        @project = nil
+        @target = nil
+        @group = nil
+        @files = []
+        @resources = []
+        @sourceTypes = ['.xib','.storyboard','.xcassets']
+        
+    end
+    
+    #打开工程
+    def setupProject()
+        @project = Xcodeproj::Project.open(@project_path)
+    end
+    
+    #生成Target
+    def setupTarget()
+        @target = @project.new_target(:application, @groupName, :ios)
+    end
+    
+    #生成group
+    def setupExampleGroup
+        @group = @project.main_group.new_group(@groupName,"./#@groupName/")
+    end
+    
+    
+    #分类
+    def classify(directory)
+        Dir::foreach(directory) do |filename|
+            if File.directory?(directory + '/' + filename) && !filename.start_with?('.') && !filename.include?('xcassets') then
+                self.classify(directory + '/' + filename)
+                else
+                if filename.start_with?('.') then
+                    #nothing to do
+                    elsif @sourceTypes.include?(File.extname(filename)) then
+                    if File.exists?(directory + '/' + filename) then
+                        # puts directory + '/' + filename
+                        @resources << filename
+                        # @files << filename
+                    end
+                    else
+                    if File.exists?(directory + '/' + filename) then
+                        # puts '>>>' + directory + '/' + filename
+                        @files << filename
+                    end
+                end
+            end
+        end
+        
+    end
+    
+    #配置工程
+    def configure
+        @target.build_configuration_list.set_setting('INFOPLIST_FILE', "./Example/Info.plist")
+        @target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '4.2'
+            config.build_settings['PRODUCT_NAME'] = '$(TARGET_NAME)'
+            config.build_settings['PRODUCT_BUNDLE_IDENTIFIER'] = 'com.taihe.XcodeprojTests'
+        end
+    end
+    
+    #添加文件
+    def addFileRefrence
+        file_references = []
+        @files.each { |filename|
+            file_references << @group.new_reference(filename)
+        }
+        @target.add_file_references(file_references)
+    end
+    
+    #添加资源
+    def addResrouces
+        file_resources = []
+        @resources.each { |filename|
+            file_resources << @group.new_reference(filename)
+        }
+        @target.add_resources(file_resources)
+    end
+    
+    
+    #执行
+    def exec()
+        self.setupProject()
+        self.setupTarget()
+        self.setupExampleGroup()
+        self.configure()
+        self.classify(@pathDir + '/' + @groupName)
+        self.addFileRefrence()
+        self.addResrouces()
+        
+        # @target.add_file_references([@group.new_reference("AppDelegate.swift"),
+        # @group.new_reference("ViewController.swift"),
+        # @group.new_reference("Info.plist"),
+        # @group.new_reference("Base.lproj")])
+        # @target.add_resources([@group.new_reference("Assets.xcassets")])
+        
+        
+        @project.save
+    end
+end
+
+example = Example.new('./XcodeprojTests','XcodeprojTests.xcodeproj','Example')
+example.exec()
+require 'xcodeproj'
+# require 'Dir'
+
+class Example
+    
+    #构造方法
+    def initialize(pathDir, projectName, groupName)
+        @pathDir = pathDir
+        @projectName = projectName
+        @groupName = groupName
+        #工程路径
+        @project_path = pathDir + '/' + projectName
+        #工程对象
+        @project = nil
+        @target = nil
+        @group = nil
+        @files = []
+        @resources = []
+        @sourceTypes = ['.xib','.storyboard','.xcassets']
+        
+    end
+    
+    #打开工程
+    def setupProject()
+        @project = Xcodeproj::Project.open(@project_path)
+    end
+    
+    #生成Target
+    def setupTarget()
+        @target = @project.new_target(:application, @groupName, :ios)
+    end
+    
+    #生成group
+    def setupExampleGroup
+        @group = @project.main_group.new_group(@groupName,"./#@groupName/")
+    end
+    
+    
+    #分类
+    def classify(directory)
+        Dir::foreach(directory) do |filename|
+            if File.directory?(directory + '/' + filename) && !filename.start_with?('.') && !filename.include?('xcassets') then
+                self.classify(directory + '/' + filename)
+                else
+                if filename.start_with?('.') then
+                    #nothing to do
+                    elsif @sourceTypes.include?(File.extname(filename)) then
+                    if File.exists?(directory + '/' + filename) then
+                        # puts directory + '/' + filename
+                        @resources << filename
+                        # @files << filename
+                    end
+                    else
+                    if File.exists?(directory + '/' + filename) then
+                        # puts '>>>' + directory + '/' + filename
+                        @files << filename
+                    end
+                end
+            end
+        end
+        
+    end
+    
+    #配置工程
+    def configure
+        @target.build_configuration_list.set_setting('INFOPLIST_FILE', "./Example/Info.plist")
+        @target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '4.2'
+            config.build_settings['PRODUCT_NAME'] = '$(TARGET_NAME)'
+            config.build_settings['PRODUCT_BUNDLE_IDENTIFIER'] = 'com.taihe.XcodeprojTests'
+        end
+    end
+    
+    #添加文件
+    def addFileRefrence
+        file_references = []
+        @files.each { |filename|
+            file_references << @group.new_reference(filename)
+        }
+        @target.add_file_references(file_references)
+    end
+    
+    #添加资源
+    def addResrouces
+        file_resources = []
+        @resources.each { |filename|
+            file_resources << @group.new_reference(filename)
+        }
+        @target.add_resources(file_resources)
+    end
+    
+    
+    #执行
+    def exec()
+        self.setupProject()
+        self.setupTarget()
+        self.setupExampleGroup()
+        self.configure()
+        self.classify(@pathDir + '/' + @groupName)
+        self.addFileRefrence()
+        self.addResrouces()
+        
+        # @target.add_file_references([@group.new_reference("AppDelegate.swift"),
+        # @group.new_reference("ViewController.swift"),
+        # @group.new_reference("Info.plist"),
+        # @group.new_reference("Base.lproj")])
+        # @target.add_resources([@group.new_reference("Assets.xcassets")])
+        
+        
+        @project.save
+    end
+end
+
+example = Example.new('./XcodeprojTests','XcodeprojTests.xcodeproj','Example')
+example.exec()
+require 'xcodeproj'
+# require 'Dir'
+
+class Example
+    
+    #构造方法
+    def initialize(pathDir, projectName, groupName)
+        @pathDir = pathDir
+        @projectName = projectName
+        @groupName = groupName
+        #工程路径
+        @project_path = pathDir + '/' + projectName
+        #工程对象
+        @project = nil
+        @target = nil
+        @group = nil
+        @files = []
+        @resources = []
+        @sourceTypes = ['.xib','.storyboard','.xcassets']
+        
+    end
+    
+    #打开工程
+    def setupProject()
+        @project = Xcodeproj::Project.open(@project_path)
+    end
+    
+    #生成Target
+    def setupTarget()
+        @target = @project.new_target(:application, @groupName, :ios)
+    end
+    
+    #生成group
+    def setupExampleGroup
+        @group = @project.main_group.new_group(@groupName,"./#@groupName/")
+    end
+    
+    
+    #分类
+    def classify(directory)
+        Dir::foreach(directory) do |filename|
+            if File.directory?(directory + '/' + filename) && !filename.start_with?('.') && !filename.include?('xcassets') then
+                self.classify(directory + '/' + filename)
+                else
+                if filename.start_with?('.') then
+                    #nothing to do
+                    elsif @sourceTypes.include?(File.extname(filename)) then
+                    if File.exists?(directory + '/' + filename) then
+                        # puts directory + '/' + filename
+                        @resources << filename
+                        # @files << filename
+                    end
+                    else
+                    if File.exists?(directory + '/' + filename) then
+                        # puts '>>>' + directory + '/' + filename
+                        @files << filename
+                    end
+                end
+            end
+        end
+        
+    end
+    
+    #配置工程
+    def configure
+        @target.build_configuration_list.set_setting('INFOPLIST_FILE', "./Example/Info.plist")
+        @target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '4.2'
+            config.build_settings['PRODUCT_NAME'] = '$(TARGET_NAME)'
+            config.build_settings['PRODUCT_BUNDLE_IDENTIFIER'] = 'com.taihe.XcodeprojTests'
+        end
+    end
+    
+    #添加文件
+    def addFileRefrence
+        file_references = []
+        @files.each { |filename|
+            file_references << @group.new_reference(filename)
+        }
+        @target.add_file_references(file_references)
+    end
+    
+    #添加资源
+    def addResrouces
+        file_resources = []
+        @resources.each { |filename|
+            file_resources << @group.new_reference(filename)
+        }
+        @target.add_resources(file_resources)
+    end
+    
+    
+    #执行
+    def exec()
+        self.setupProject()
+        self.setupTarget()
+        self.setupExampleGroup()
+        self.configure()
+        self.classify(@pathDir + '/' + @groupName)
+        self.addFileRefrence()
+        self.addResrouces()
+        
+        # @target.add_file_references([@group.new_reference("AppDelegate.swift"),
+        # @group.new_reference("ViewController.swift"),
+        # @group.new_reference("Info.plist"),
+        # @group.new_reference("Base.lproj")])
+        # @target.add_resources([@group.new_reference("Assets.xcassets")])
+        
+        
+        @project.save
+    end
+end
+
+example = Example.new('./XcodeprojTests','XcodeprojTests.xcodeproj','Example')
+example.exec()
+require 'xcodeproj'
+# require 'Dir'
+
+class Example
+    
+    #构造方法
+    def initialize(pathDir, projectName, groupName)
+        @pathDir = pathDir
+        @projectName = projectName
+        @groupName = groupName
+        #工程路径
+        @project_path = pathDir + '/' + projectName
+        #工程对象
+        @project = nil
+        @target = nil
+        @group = nil
+        @files = []
+        @resources = []
+        @sourceTypes = ['.xib','.storyboard','.xcassets']
+        
+    end
+    
+    #打开工程
+    def setupProject()
+        @project = Xcodeproj::Project.open(@project_path)
+    end
+    
+    #生成Target
+    def setupTarget()
+        @target = @project.new_target(:application, @groupName, :ios)
+    end
+    
+    #生成group
+    def setupExampleGroup
+        @group = @project.main_group.new_group(@groupName,"./#@groupName/")
+    end
+    
+    
+    #分类
+    def classify(directory)
+        Dir::foreach(directory) do |filename|
+            if File.directory?(directory + '/' + filename) && !filename.start_with?('.') && !filename.include?('xcassets') then
+                self.classify(directory + '/' + filename)
+                else
+                if filename.start_with?('.') then
+                    #nothing to do
+                    elsif @sourceTypes.include?(File.extname(filename)) then
+                    if File.exists?(directory + '/' + filename) then
+                        # puts directory + '/' + filename
+                        @resources << filename
+                        # @files << filename
+                    end
+                    else
+                    if File.exists?(directory + '/' + filename) then
+                        # puts '>>>' + directory + '/' + filename
+                        @files << filename
+                    end
+                end
+            end
+        end
+        
+    end
+    
+    #配置工程
+    def configure
+        @target.build_configuration_list.set_setting('INFOPLIST_FILE', "./Example/Info.plist")
+        @target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '4.2'
+            config.build_settings['PRODUCT_NAME'] = '$(TARGET_NAME)'
+            config.build_settings['PRODUCT_BUNDLE_IDENTIFIER'] = 'com.taihe.XcodeprojTests'
+        end
+    end
+    
+    #添加文件
+    def addFileRefrence
+        file_references = []
+        @files.each { |filename|
+            file_references << @group.new_reference(filename)
+        }
+        @target.add_file_references(file_references)
+    end
+    
+    #添加资源
+    def addResrouces
+        file_resources = []
+        @resources.each { |filename|
+            file_resources << @group.new_reference(filename)
+        }
+        @target.add_resources(file_resources)
+    end
+    
+    
+    #执行
+    def exec()
+        self.setupProject()
+        self.setupTarget()
+        self.setupExampleGroup()
+        self.configure()
+        self.classify(@pathDir + '/' + @groupName)
+        self.addFileRefrence()
+        self.addResrouces()
+        
+        # @target.add_file_references([@group.new_reference("AppDelegate.swift"),
+        # @group.new_reference("ViewController.swift"),
+        # @group.new_reference("Info.plist"),
+        # @group.new_reference("Base.lproj")])
+        # @target.add_resources([@group.new_reference("Assets.xcassets")])
+        
+        
+        @project.save
+    end
+end
+
+example = Example.new('./XcodeprojTests','XcodeprojTests.xcodeproj','Example')
+example.exec()
+require 'xcodeproj'
+# require 'Dir'
+
+class Example
+    
+    #构造方法
+    def initialize(pathDir, projectName, groupName)
+        @pathDir = pathDir
+        @projectName = projectName
+        @groupName = groupName
+        #工程路径
+        @project_path = pathDir + '/' + projectName
+        #工程对象
+        @project = nil
+        @target = nil
+        @group = nil
+        @files = []
+        @resources = []
+        @sourceTypes = ['.xib','.storyboard','.xcassets']
+        
+    end
+    
+    #打开工程
+    def setupProject()
+        @project = Xcodeproj::Project.open(@project_path)
+    end
+    
+    #生成Target
+    def setupTarget()
+        @target = @project.new_target(:application, @groupName, :ios)
+    end
+    
+    #生成group
+    def setupExampleGroup
+        @group = @project.main_group.new_group(@groupName,"./#@groupName/")
+    end
+    
+    
+    #分类
+    def classify(directory)
+        Dir::foreach(directory) do |filename|
+            if File.directory?(directory + '/' + filename) && !filename.start_with?('.') && !filename.include?('xcassets') then
+                self.classify(directory + '/' + filename)
+                else
+                if filename.start_with?('.') then
+                    #nothing to do
+                    elsif @sourceTypes.include?(File.extname(filename)) then
+                    if File.exists?(directory + '/' + filename) then
+                        # puts directory + '/' + filename
+                        @resources << filename
+                        # @files << filename
+                    end
+                    else
+                    if File.exists?(directory + '/' + filename) then
+                        # puts '>>>' + directory + '/' + filename
+                        @files << filename
+                    end
+                end
+            end
+        end
+        
+    end
+    
+    #配置工程
+    def configure
+        @target.build_configuration_list.set_setting('INFOPLIST_FILE', "./Example/Info.plist")
+        @target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '4.2'
+            config.build_settings['PRODUCT_NAME'] = '$(TARGET_NAME)'
+            config.build_settings['PRODUCT_BUNDLE_IDENTIFIER'] = 'com.taihe.XcodeprojTests'
+        end
+    end
+    
+    #添加文件
+    def addFileRefrence
+        file_references = []
+        @files.each { |filename|
+            file_references << @group.new_reference(filename)
+        }
+        @target.add_file_references(file_references)
+    end
+    
+    #添加资源
+    def addResrouces
+        file_resources = []
+        @resources.each { |filename|
+            file_resources << @group.new_reference(filename)
+        }
+        @target.add_resources(file_resources)
+    end
+    
+    
+    #执行
+    def exec()
+        self.setupProject()
+        self.setupTarget()
+        self.setupExampleGroup()
+        self.configure()
+        self.classify(@pathDir + '/' + @groupName)
+        self.addFileRefrence()
+        self.addResrouces()
+        
+        # @target.add_file_references([@group.new_reference("AppDelegate.swift"),
+        # @group.new_reference("ViewController.swift"),
+        # @group.new_reference("Info.plist"),
+        # @group.new_reference("Base.lproj")])
+        # @target.add_resources([@group.new_reference("Assets.xcassets")])
+        
+        
+        @project.save
+    end
+end
+
+example = Example.new('./XcodeprojTests','XcodeprojTests.xcodeproj','Example')
+example.exec()
+require 'xcodeproj'
+# require 'Dir'
+
+class Example
+    
+    #构造方法
+    def initialize(pathDir, projectName, groupName)
+        @pathDir = pathDir
+        @projectName = projectName
+        @groupName = groupName
+        #工程路径
+        @project_path = pathDir + '/' + projectName
+        #工程对象
+        @project = nil
+        @target = nil
+        @group = nil
+        @files = []
+        @resources = []
+        @sourceTypes = ['.xib','.storyboard','.xcassets']
+        
+    end
+    
+    #打开工程
+    def setupProject()
+        @project = Xcodeproj::Project.open(@project_path)
+    end
+    
+    #生成Target
+    def setupTarget()
+        @target = @project.new_target(:application, @groupName, :ios)
+    end
+    
+    #生成group
+    def setupExampleGroup
+        @group = @project.main_group.new_group(@groupName,"./#@groupName/")
+    end
+    
+    
+    #分类
+    def classify(directory)
+        Dir::foreach(directory) do |filename|
+            if File.directory?(directory + '/' + filename) && !filename.start_with?('.') && !filename.include?('xcassets') then
+                self.classify(directory + '/' + filename)
+                else
+                if filename.start_with?('.') then
+                    #nothing to do
+                    elsif @sourceTypes.include?(File.extname(filename)) then
+                    if File.exists?(directory + '/' + filename) then
+                        # puts directory + '/' + filename
+                        @resources << filename
+                        # @files << filename
+                    end
+                    else
+                    if File.exists?(directory + '/' + filename) then
+                        # puts '>>>' + directory + '/' + filename
+                        @files << filename
+                    end
+                end
+            end
+        end
+        
+    end
+    
+    #配置工程
+    def configure
+        @target.build_configuration_list.set_setting('INFOPLIST_FILE', "./Example/Info.plist")
+        @target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '4.2'
+            config.build_settings['PRODUCT_NAME'] = '$(TARGET_NAME)'
+            config.build_settings['PRODUCT_BUNDLE_IDENTIFIER'] = 'com.taihe.XcodeprojTests'
+        end
+    end
+    
+    #添加文件
+    def addFileRefrence
+        file_references = []
+        @files.each { |filename|
+            file_references << @group.new_reference(filename)
+        }
+        @target.add_file_references(file_references)
+    end
+    
+    #添加资源
+    def addResrouces
+        file_resources = []
+        @resources.each { |filename|
+            file_resources << @group.new_reference(filename)
+        }
+        @target.add_resources(file_resources)
+    end
+    
+    
+    #执行
+    def exec()
+        self.setupProject()
+        self.setupTarget()
+        self.setupExampleGroup()
+        self.configure()
+        self.classify(@pathDir + '/' + @groupName)
+        self.addFileRefrence()
+        self.addResrouces()
+        
+        # @target.add_file_references([@group.new_reference("AppDelegate.swift"),
+        # @group.new_reference("ViewController.swift"),
+        # @group.new_reference("Info.plist"),
+        # @group.new_reference("Base.lproj")])
+        # @target.add_resources([@group.new_reference("Assets.xcassets")])
+        
+        
+        @project.save
+    end
+end
+
+example = Example.new('./XcodeprojTests','XcodeprojTests.xcodeproj','Example')
+example.exec()
+require 'xcodeproj'
+# require 'Dir'
+
+class Example
+    
+    #构造方法
+    def initialize(pathDir, projectName, groupName)
+        @pathDir = pathDir
+        @projectName = projectName
+        @groupName = groupName
+        #工程路径
+        @project_path = pathDir + '/' + projectName
+        #工程对象
+        @project = nil
+        @target = nil
+        @group = nil
+        @files = []
+        @resources = []
+        @sourceTypes = ['.xib','.storyboard','.xcassets']
+        
+    end
+    
+    #打开工程
+    def setupProject()
+        @project = Xcodeproj::Project.open(@project_path)
+    end
+    
+    #生成Target
+    def setupTarget()
+        @target = @project.new_target(:application, @groupName, :ios)
+    end
+    
+    #生成group
+    def setupExampleGroup
+        @group = @project.main_group.new_group(@groupName,"./#@groupName/")
+    end
+    
+    
+    #分类
+    def classify(directory)
+        Dir::foreach(directory) do |filename|
+            if File.directory?(directory + '/' + filename) && !filename.start_with?('.') && !filename.include?('xcassets') then
+                self.classify(directory + '/' + filename)
+                else
+                if filename.start_with?('.') then
+                    #nothing to do
+                    elsif @sourceTypes.include?(File.extname(filename)) then
+                    if File.exists?(directory + '/' + filename) then
+                        # puts directory + '/' + filename
+                        @resources << filename
+                        # @files << filename
+                    end
+                    else
+                    if File.exists?(directory + '/' + filename) then
+                        # puts '>>>' + directory + '/' + filename
+                        @files << filename
+                    end
+                end
+            end
+        end
+        
+    end
+    
+    #配置工程
+    def configure
+        @target.build_configuration_list.set_setting('INFOPLIST_FILE', "./Example/Info.plist")
+        @target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '4.2'
+            config.build_settings['PRODUCT_NAME'] = '$(TARGET_NAME)'
+            config.build_settings['PRODUCT_BUNDLE_IDENTIFIER'] = 'com.taihe.XcodeprojTests'
+        end
+    end
+    
+    #添加文件
+    def addFileRefrence
+        file_references = []
+        @files.each { |filename|
+            file_references << @group.new_reference(filename)
+        }
+        @target.add_file_references(file_references)
+    end
+    
+    #添加资源
+    def addResrouces
+        file_resources = []
+        @resources.each { |filename|
+            file_resources << @group.new_reference(filename)
+        }
+        @target.add_resources(file_resources)
+    end
+    
+    
+    #执行
+    def exec()
+        self.setupProject()
+        self.setupTarget()
+        self.setupExampleGroup()
+        self.configure()
+        self.classify(@pathDir + '/' + @groupName)
+        self.addFileRefrence()
+        self.addResrouces()
+        
+        # @target.add_file_references([@group.new_reference("AppDelegate.swift"),
+        # @group.new_reference("ViewController.swift"),
+        # @group.new_reference("Info.plist"),
+        # @group.new_reference("Base.lproj")])
+        # @target.add_resources([@group.new_reference("Assets.xcassets")])
+        
+        
+        @project.save
+    end
+end
+
+example = Example.new('./XcodeprojTests','XcodeprojTests.xcodeproj','Example')
+example.exec()
+require 'xcodeproj'
+# require 'Dir'
+
+class Example
+    
+    #构造方法
+    def initialize(pathDir, projectName, groupName)
+        @pathDir = pathDir
+        @projectName = projectName
+        @groupName = groupName
+        #工程路径
+        @project_path = pathDir + '/' + projectName
+        #工程对象
+        @project = nil
+        @target = nil
+        @group = nil
+        @files = []
+        @resources = []
+        @sourceTypes = ['.xib','.storyboard','.xcassets']
+        
+    end
+    
+    #打开工程
+    def setupProject()
+        @project = Xcodeproj::Project.open(@project_path)
+    end
+    
+    #生成Target
+    def setupTarget()
+        @target = @project.new_target(:application, @groupName, :ios)
+    end
+    
+    #生成group
+    def setupExampleGroup
+        @group = @project.main_group.new_group(@groupName,"./#@groupName/")
+    end
+    
+    
+    #分类
+    def classify(directory)
+        Dir::foreach(directory) do |filename|
+            if File.directory?(directory + '/' + filename) && !filename.start_with?('.') && !filename.include?('xcassets') then
+                self.classify(directory + '/' + filename)
+                else
+                if filename.start_with?('.') then
+                    #nothing to do
+                    elsif @sourceTypes.include?(File.extname(filename)) then
+                    if File.exists?(directory + '/' + filename) then
+                        # puts directory + '/' + filename
+                        @resources << filename
+                        # @files << filename
+                    end
+                    else
+                    if File.exists?(directory + '/' + filename) then
+                        # puts '>>>' + directory + '/' + filename
+                        @files << filename
+                    end
+                end
+            end
+        end
+        
+    end
+    
+    #配置工程
+    def configure
+        @target.build_configuration_list.set_setting('INFOPLIST_FILE', "./Example/Info.plist")
+        @target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '4.2'
+            config.build_settings['PRODUCT_NAME'] = '$(TARGET_NAME)'
+            config.build_settings['PRODUCT_BUNDLE_IDENTIFIER'] = 'com.taihe.XcodeprojTests'
+        end
+    end
+    
+    #添加文件
+    def addFileRefrence
+        file_references = []
+        @files.each { |filename|
+            file_references << @group.new_reference(filename)
+        }
+        @target.add_file_references(file_references)
+    end
+    
+    #添加资源
+    def addResrouces
+        file_resources = []
+        @resources.each { |filename|
+            file_resources << @group.new_reference(filename)
+        }
+        @target.add_resources(file_resources)
+    end
+    
+    
+    #执行
+    def exec()
+        self.setupProject()
+        self.setupTarget()
+        self.setupExampleGroup()
+        self.configure()
+        self.classify(@pathDir + '/' + @groupName)
+        self.addFileRefrence()
+        self.addResrouces()
+        
+        # @target.add_file_references([@group.new_reference("AppDelegate.swift"),
+        # @group.new_reference("ViewController.swift"),
+        # @group.new_reference("Info.plist"),
+        # @group.new_reference("Base.lproj")])
+        # @target.add_resources([@group.new_reference("Assets.xcassets")])
+        
+        
+        @project.save
+    end
+end
+
+example = Example.new('./XcodeprojTests','XcodeprojTests.xcodeproj','Example')
+example.exec()
+require 'xcodeproj'
+# require 'Dir'
+
+class Example
+    
+    #构造方法
+    def initialize(pathDir, projectName, groupName)
+        @pathDir = pathDir
+        @projectName = projectName
+        @groupName = groupName
+        #工程路径
+        @project_path = pathDir + '/' + projectName
+        #工程对象
+        @project = nil
+        @target = nil
+        @group = nil
+        @files = []
+        @resources = []
+        @sourceTypes = ['.xib','.storyboard','.xcassets']
+        
+    end
+    
+    #打开工程
+    def setupProject()
+        @project = Xcodeproj::Project.open(@project_path)
+    end
+    
+    #生成Target
+    def setupTarget()
+        @target = @project.new_target(:application, @groupName, :ios)
+    end
+    
+    #生成group
+    def setupExampleGroup
+        @group = @project.main_group.new_group(@groupName,"./#@groupName/")
+    end
+    
+    
+    #分类
+    def classify(directory)
+        Dir::foreach(directory) do |filename|
+            if File.directory?(directory + '/' + filename) && !filename.start_with?('.') && !filename.include?('xcassets') then
+                self.classify(directory + '/' + filename)
+                else
+                if filename.start_with?('.') then
+                    #nothing to do
+                    elsif @sourceTypes.include?(File.extname(filename)) then
+                    if File.exists?(directory + '/' + filename) then
+                        # puts directory + '/' + filename
+                        @resources << filename
+                        # @files << filename
+                    end
+                    else
+                    if File.exists?(directory + '/' + filename) then
+                        # puts '>>>' + directory + '/' + filename
+                        @files << filename
+                    end
+                end
+            end
+        end
+        
+    end
+    
+    #配置工程
+    def configure
+        @target.build_configuration_list.set_setting('INFOPLIST_FILE', "./Example/Info.plist")
+        @target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '4.2'
+            config.build_settings['PRODUCT_NAME'] = '$(TARGET_NAME)'
+            config.build_settings['PRODUCT_BUNDLE_IDENTIFIER'] = 'com.taihe.XcodeprojTests'
+        end
+    end
+    
+    #添加文件
+    def addFileRefrence
+        file_references = []
+        @files.each { |filename|
+            file_references << @group.new_reference(filename)
+        }
+        @target.add_file_references(file_references)
+    end
+    
+    #添加资源
+    def addResrouces
+        file_resources = []
+        @resources.each { |filename|
+            file_resources << @group.new_reference(filename)
+        }
+        @target.add_resources(file_resources)
+    end
+    
+    
+    #执行
+    def exec()
+        self.setupProject()
+        self.setupTarget()
+        self.setupExampleGroup()
+        self.configure()
+        self.classify(@pathDir + '/' + @groupName)
+        self.addFileRefrence()
+        self.addResrouces()
+        
+        # @target.add_file_references([@group.new_reference("AppDelegate.swift"),
+        # @group.new_reference("ViewController.swift"),
+        # @group.new_reference("Info.plist"),
+        # @group.new_reference("Base.lproj")])
+        # @target.add_resources([@group.new_reference("Assets.xcassets")])
+        
+        
+        @project.save
+    end
+end
+
+example = Example.new('./XcodeprojTests','XcodeprojTests.xcodeproj','Example')
+example.exec()
+require 'xcodeproj'
+# require 'Dir'
+
+class Example
+    
+    #构造方法
+    def initialize(pathDir, projectName, groupName)
+        @pathDir = pathDir
+        @projectName = projectName
+        @groupName = groupName
+        #工程路径
+        @project_path = pathDir + '/' + projectName
+        #工程对象
+        @project = nil
+        @target = nil
+        @group = nil
+        @files = []
+        @resources = []
+        @sourceTypes = ['.xib','.storyboard','.xcassets']
+        
+    end
+    
+    #打开工程
+    def setupProject()
+        @project = Xcodeproj::Project.open(@project_path)
+    end
+    
+    #生成Target
+    def setupTarget()
+        @target = @project.new_target(:application, @groupName, :ios)
+    end
+    
+    #生成group
+    def setupExampleGroup
+        @group = @project.main_group.new_group(@groupName,"./#@groupName/")
+    end
+    
+    
+    #分类
+    def classify(directory)
+        Dir::foreach(directory) do |filename|
+            if File.directory?(directory + '/' + filename) && !filename.start_with?('.') && !filename.include?('xcassets') then
+                self.classify(directory + '/' + filename)
+                else
+                if filename.start_with?('.') then
+                    #nothing to do
+                    elsif @sourceTypes.include?(File.extname(filename)) then
+                    if File.exists?(directory + '/' + filename) then
+                        # puts directory + '/' + filename
+                        @resources << filename
+                        # @files << filename
+                    end
+                    else
+                    if File.exists?(directory + '/' + filename) then
+                        # puts '>>>' + directory + '/' + filename
+                        @files << filename
+                    end
+                end
+            end
+        end
+        
+    end
+    
+    #配置工程
+    def configure
+        @target.build_configuration_list.set_setting('INFOPLIST_FILE', "./Example/Info.plist")
+        @target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '4.2'
+            config.build_settings['PRODUCT_NAME'] = '$(TARGET_NAME)'
+            config.build_settings['PRODUCT_BUNDLE_IDENTIFIER'] = 'com.taihe.XcodeprojTests'
+        end
+    end
+    
+    #添加文件
+    def addFileRefrence
+        file_references = []
+        @files.each { |filename|
+            file_references << @group.new_reference(filename)
+        }
+        @target.add_file_references(file_references)
+    end
+    
+    #添加资源
+    def addResrouces
+        file_resources = []
+        @resources.each { |filename|
+            file_resources << @group.new_reference(filename)
+        }
+        @target.add_resources(file_resources)
+    end
+    
+    
+    #执行
+    def exec()
+        self.setupProject()
+        self.setupTarget()
+        self.setupExampleGroup()
+        self.configure()
+        self.classify(@pathDir + '/' + @groupName)
+        self.addFileRefrence()
+        self.addResrouces()
+        
+        # @target.add_file_references([@group.new_reference("AppDelegate.swift"),
+        # @group.new_reference("ViewController.swift"),
+        # @group.new_reference("Info.plist"),
+        # @group.new_reference("Base.lproj")])
+        # @target.add_resources([@group.new_reference("Assets.xcassets")])
+        
+        
+        @project.save
+    end
+end
+
+example = Example.new('./XcodeprojTests','XcodeprojTests.xcodeproj','Example')
+example.exec()
+require 'xcodeproj'
+# require 'Dir'
+
+class Example
+    
+    #构造方法
+    def initialize(pathDir, projectName, groupName)
+        @pathDir = pathDir
+        @projectName = projectName
+        @groupName = groupName
+        #工程路径
+        @project_path = pathDir + '/' + projectName
+        #工程对象
+        @project = nil
+        @target = nil
+        @group = nil
+        @files = []
+        @resources = []
+        @sourceTypes = ['.xib','.storyboard','.xcassets']
+        
+    end
+    
+    #打开工程
+    def setupProject()
+        @project = Xcodeproj::Project.open(@project_path)
+    end
+    
+    #生成Target
+    def setupTarget()
+        @target = @project.new_target(:application, @groupName, :ios)
+    end
+    
+    #生成group
+    def setupExampleGroup
+        @group = @project.main_group.new_group(@groupName,"./#@groupName/")
+    end
+    
+    
+    #分类
+    def classify(directory)
+        Dir::foreach(directory) do |filename|
+            if File.directory?(directory + '/' + filename) && !filename.start_with?('.') && !filename.include?('xcassets') then
+                self.classify(directory + '/' + filename)
+                else
+                if filename.start_with?('.') then
+                    #nothing to do
+                    elsif @sourceTypes.include?(File.extname(filename)) then
+                    if File.exists?(directory + '/' + filename) then
+                        # puts directory + '/' + filename
+                        @resources << filename
+                        # @files << filename
+                    end
+                    else
+                    if File.exists?(directory + '/' + filename) then
+                        # puts '>>>' + directory + '/' + filename
+                        @files << filename
+                    end
+                end
+            end
+        end
+        
+    end
+    
+    #配置工程
+    def configure
+        @target.build_configuration_list.set_setting('INFOPLIST_FILE', "./Example/Info.plist")
+        @target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '4.2'
+            config.build_settings['PRODUCT_NAME'] = '$(TARGET_NAME)'
+            config.build_settings['PRODUCT_BUNDLE_IDENTIFIER'] = 'com.taihe.XcodeprojTests'
+        end
+    end
+    
+    #添加文件
+    def addFileRefrence
+        file_references = []
+        @files.each { |filename|
+            file_references << @group.new_reference(filename)
+        }
+        @target.add_file_references(file_references)
+    end
+    
+    #添加资源
+    def addResrouces
+        file_resources = []
+        @resources.each { |filename|
+            file_resources << @group.new_reference(filename)
+        }
+        @target.add_resources(file_resources)
+    end
+    
+    
+    #执行
+    def exec()
+        self.setupProject()
+        self.setupTarget()
+        self.setupExampleGroup()
+        self.configure()
+        self.classify(@pathDir + '/' + @groupName)
+        self.addFileRefrence()
+        self.addResrouces()
+        
+        # @target.add_file_references([@group.new_reference("AppDelegate.swift"),
+        # @group.new_reference("ViewController.swift"),
+        # @group.new_reference("Info.plist"),
+        # @group.new_reference("Base.lproj")])
+        # @target.add_resources([@group.new_reference("Assets.xcassets")])
+        
+        
+        @project.save
+    end
+end
+
+example = Example.new('./XcodeprojTests','XcodeprojTests.xcodeproj','Example')
+example.exec()
+require 'xcodeproj'
+# require 'Dir'
+
+class Example
+    
+    #构造方法
+    def initialize(pathDir, projectName, groupName)
+        @pathDir = pathDir
+        @projectName = projectName
+        @groupName = groupName
+        #工程路径
+        @project_path = pathDir + '/' + projectName
+        #工程对象
+        @project = nil
+        @target = nil
+        @group = nil
+        @files = []
+        @resources = []
+        @sourceTypes = ['.xib','.storyboard','.xcassets']
+        
+    end
+    
+    #打开工程
+    def setupProject()
+        @project = Xcodeproj::Project.open(@project_path)
+    end
+    
+    #生成Target
+    def setupTarget()
+        @target = @project.new_target(:application, @groupName, :ios)
+    end
+    
+    #生成group
+    def setupExampleGroup
+        @group = @project.main_group.new_group(@groupName,"./#@groupName/")
+    end
+    
+    
+    #分类
+    def classify(directory)
+        Dir::foreach(directory) do |filename|
+            if File.directory?(directory + '/' + filename) && !filename.start_with?('.') && !filename.include?('xcassets') then
+                self.classify(directory + '/' + filename)
+                else
+                if filename.start_with?('.') then
+                    #nothing to do
+                    elsif @sourceTypes.include?(File.extname(filename)) then
+                    if File.exists?(directory + '/' + filename) then
+                        # puts directory + '/' + filename
+                        @resources << filename
+                        # @files << filename
+                    end
+                    else
+                    if File.exists?(directory + '/' + filename) then
+                        # puts '>>>' + directory + '/' + filename
+                        @files << filename
+                    end
+                end
+            end
+        end
+        
+    end
+    
+    #配置工程
+    def configure
+        @target.build_configuration_list.set_setting('INFOPLIST_FILE', "./Example/Info.plist")
+        @target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '4.2'
+            config.build_settings['PRODUCT_NAME'] = '$(TARGET_NAME)'
+            config.build_settings['PRODUCT_BUNDLE_IDENTIFIER'] = 'com.taihe.XcodeprojTests'
+        end
+    end
+    
+    #添加文件
+    def addFileRefrence
+        file_references = []
+        @files.each { |filename|
+            file_references << @group.new_reference(filename)
+        }
+        @target.add_file_references(file_references)
+    end
+    
+    #添加资源
+    def addResrouces
+        file_resources = []
+        @resources.each { |filename|
+            file_resources << @group.new_reference(filename)
+        }
+        @target.add_resources(file_resources)
+    end
+    
+    
+    #执行
+    def exec()
+        self.setupProject()
+        self.setupTarget()
+        self.setupExampleGroup()
+        self.configure()
+        self.classify(@pathDir + '/' + @groupName)
+        self.addFileRefrence()
+        self.addResrouces()
+        
+        # @target.add_file_references([@group.new_reference("AppDelegate.swift"),
+        # @group.new_reference("ViewController.swift"),
+        # @group.new_reference("Info.plist"),
+        # @group.new_reference("Base.lproj")])
+        # @target.add_resources([@group.new_reference("Assets.xcassets")])
+        
+        
+        @project.save
+    end
+end
+
+example = Example.new('./XcodeprojTests','XcodeprojTests.xcodeproj','Example')
+example.exec()
+require 'xcodeproj'
+# require 'Dir'
+
+class Example
+    
+    #构造方法
+    def initialize(pathDir, projectName, groupName)
+        @pathDir = pathDir
+        @projectName = projectName
+        @groupName = groupName
+        #工程路径
+        @project_path = pathDir + '/' + projectName
+        #工程对象
+        @project = nil
+        @target = nil
+        @group = nil
+        @files = []
+        @resources = []
+        @sourceTypes = ['.xib','.storyboard','.xcassets']
+        
+    end
+    
+    #打开工程
+    def setupProject()
+        @project = Xcodeproj::Project.open(@project_path)
+    end
+    
+    #生成Target
+    def setupTarget()
+        @target = @project.new_target(:application, @groupName, :ios)
+    end
+    
+    #生成group
+    def setupExampleGroup
+        @group = @project.main_group.new_group(@groupName,"./#@groupName/")
+    end
+    
+    
+    #分类
+    def classify(directory)
+        Dir::foreach(directory) do |filename|
+            if File.directory?(directory + '/' + filename) && !filename.start_with?('.') && !filename.include?('xcassets') then
+                self.classify(directory + '/' + filename)
+                else
+                if filename.start_with?('.') then
+                    #nothing to do
+                    elsif @sourceTypes.include?(File.extname(filename)) then
+                    if File.exists?(directory + '/' + filename) then
+                        # puts directory + '/' + filename
+                        @resources << filename
+                        # @files << filename
+                    end
+                    else
+                    if File.exists?(directory + '/' + filename) then
+                        # puts '>>>' + directory + '/' + filename
+                        @files << filename
+                    end
+                end
+            end
+        end
+        
+    end
+    
+    #配置工程
+    def configure
+        @target.build_configuration_list.set_setting('INFOPLIST_FILE', "./Example/Info.plist")
+        @target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '4.2'
+            config.build_settings['PRODUCT_NAME'] = '$(TARGET_NAME)'
+            config.build_settings['PRODUCT_BUNDLE_IDENTIFIER'] = 'com.taihe.XcodeprojTests'
+        end
+    end
+    
+    #添加文件
+    def addFileRefrence
+        file_references = []
+        @files.each { |filename|
+            file_references << @group.new_reference(filename)
+        }
+        @target.add_file_references(file_references)
+    end
+    
+    #添加资源
+    def addResrouces
+        file_resources = []
+        @resources.each { |filename|
+            file_resources << @group.new_reference(filename)
+        }
+        @target.add_resources(file_resources)
+    end
+    
+    
+    #执行
+    def exec()
+        self.setupProject()
+        self.setupTarget()
+        self.setupExampleGroup()
+        self.configure()
+        self.classify(@pathDir + '/' + @groupName)
+        self.addFileRefrence()
+        self.addResrouces()
+        
+        # @target.add_file_references([@group.new_reference("AppDelegate.swift"),
+        # @group.new_reference("ViewController.swift"),
+        # @group.new_reference("Info.plist"),
+        # @group.new_reference("Base.lproj")])
+        # @target.add_resources([@group.new_reference("Assets.xcassets")])
+        
+        
+        @project.save
+    end
+end
+
+example = Example.new('./XcodeprojTests','XcodeprojTests.xcodeproj','Example')
+example.exec()
+require 'xcodeproj'
+# require 'Dir'
+
+class Example
+    
+    #构造方法
+    def initialize(pathDir, projectName, groupName)
+        @pathDir = pathDir
+        @projectName = projectName
+        @groupName = groupName
+        #工程路径
+        @project_path = pathDir + '/' + projectName
+        #工程对象
+        @project = nil
+        @target = nil
+        @group = nil
+        @files = []
+        @resources = []
+        @sourceTypes = ['.xib','.storyboard','.xcassets']
+        
+    end
+    
+    #打开工程
+    def setupProject()
+        @project = Xcodeproj::Project.open(@project_path)
+    end
+    
+    #生成Target
+    def setupTarget()
+        @target = @project.new_target(:application, @groupName, :ios)
+    end
+    
+    #生成group
+    def setupExampleGroup
+        @group = @project.main_group.new_group(@groupName,"./#@groupName/")
+    end
+    
+    
+    #分类
+    def classify(directory)
+        Dir::foreach(directory) do |filename|
+            if File.directory?(directory + '/' + filename) && !filename.start_with?('.') && !filename.include?('xcassets') then
+                self.classify(directory + '/' + filename)
+                else
+                if filename.start_with?('.') then
+                    #nothing to do
+                    elsif @sourceTypes.include?(File.extname(filename)) then
+                    if File.exists?(directory + '/' + filename) then
+                        # puts directory + '/' + filename
+                        @resources << filename
+                        # @files << filename
+                    end
+                    else
+                    if File.exists?(directory + '/' + filename) then
+                        # puts '>>>' + directory + '/' + filename
+                        @files << filename
+                    end
+                end
+            end
+        end
+        
+    end
+    
+    #配置工程
+    def configure
+        @target.build_configuration_list.set_setting('INFOPLIST_FILE', "./Example/Info.plist")
+        @target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '4.2'
+            config.build_settings['PRODUCT_NAME'] = '$(TARGET_NAME)'
+            config.build_settings['PRODUCT_BUNDLE_IDENTIFIER'] = 'com.taihe.XcodeprojTests'
+        end
+    end
+    
+    #添加文件
+    def addFileRefrence
+        file_references = []
+        @files.each { |filename|
+            file_references << @group.new_reference(filename)
+        }
+        @target.add_file_references(file_references)
+    end
+    
+    #添加资源
+    def addResrouces
+        file_resources = []
+        @resources.each { |filename|
+            file_resources << @group.new_reference(filename)
+        }
+        @target.add_resources(file_resources)
+    end
+    
+    
+    #执行
+    def exec()
+        self.setupProject()
+        self.setupTarget()
+        self.setupExampleGroup()
+        self.configure()
+        self.classify(@pathDir + '/' + @groupName)
+        self.addFileRefrence()
+        self.addResrouces()
+        
+        # @target.add_file_references([@group.new_reference("AppDelegate.swift"),
+        # @group.new_reference("ViewController.swift"),
+        # @group.new_reference("Info.plist"),
+        # @group.new_reference("Base.lproj")])
+        # @target.add_resources([@group.new_reference("Assets.xcassets")])
+        
+        
+        @project.save
+    end
+end
+
+example = Example.new('./XcodeprojTests','XcodeprojTests.xcodeproj','Example')
+example.exec()
+require 'xcodeproj'
+# require 'Dir'
+
+class Example
+    
+    #构造方法
+    def initialize(pathDir, projectName, groupName)
+        @pathDir = pathDir
+        @projectName = projectName
+        @groupName = groupName
+        #工程路径
+        @project_path = pathDir + '/' + projectName
+        #工程对象
+        @project = nil
+        @target = nil
+        @group = nil
+        @files = []
+        @resources = []
+        @sourceTypes = ['.xib','.storyboard','.xcassets']
+        
+    end
+    
+    #打开工程
+    def setupProject()
+        @project = Xcodeproj::Project.open(@project_path)
+    end
+    
+    #生成Target
+    def setupTarget()
+        @target = @project.new_target(:application, @groupName, :ios)
+    end
+    
+    #生成group
+    def setupExampleGroup
+        @group = @project.main_group.new_group(@groupName,"./#@groupName/")
+    end
+    
+    
+    #分类
+    def classify(directory)
+        Dir::foreach(directory) do |filename|
+            if File.directory?(directory + '/' + filename) && !filename.start_with?('.') && !filename.include?('xcassets') then
+                self.classify(directory + '/' + filename)
+                else
+                if filename.start_with?('.') then
+                    #nothing to do
+                    elsif @sourceTypes.include?(File.extname(filename)) then
+                    if File.exists?(directory + '/' + filename) then
+                        # puts directory + '/' + filename
+                        @resources << filename
+                        # @files << filename
+                    end
+                    else
+                    if File.exists?(directory + '/' + filename) then
+                        # puts '>>>' + directory + '/' + filename
+                        @files << filename
+                    end
+                end
+            end
+        end
+        
+    end
+    
+    #配置工程
+    def configure
+        @target.build_configuration_list.set_setting('INFOPLIST_FILE', "./Example/Info.plist")
+        @target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '4.2'
+            config.build_settings['PRODUCT_NAME'] = '$(TARGET_NAME)'
+            config.build_settings['PRODUCT_BUNDLE_IDENTIFIER'] = 'com.taihe.XcodeprojTests'
+        end
+    end
+    
+    #添加文件
+    def addFileRefrence
+        file_references = []
+        @files.each { |filename|
+            file_references << @group.new_reference(filename)
+        }
+        @target.add_file_references(file_references)
+    end
+    
+    #添加资源
+    def addResrouces
+        file_resources = []
+        @resources.each { |filename|
+            file_resources << @group.new_reference(filename)
+        }
+        @target.add_resources(file_resources)
+    end
+    
+    
+    #执行
+    def exec()
+        self.setupProject()
+        self.setupTarget()
+        self.setupExampleGroup()
+        self.configure()
+        self.classify(@pathDir + '/' + @groupName)
+        self.addFileRefrence()
+        self.addResrouces()
+        
+        # @target.add_file_references([@group.new_reference("AppDelegate.swift"),
+        # @group.new_reference("ViewController.swift"),
+        # @group.new_reference("Info.plist"),
+        # @group.new_reference("Base.lproj")])
+        # @target.add_resources([@group.new_reference("Assets.xcassets")])
+        
+        
+        @project.save
+    end
+end
+
+example = Example.new('./XcodeprojTests','XcodeprojTests.xcodeproj','Example')
+example.exec()
+require 'xcodeproj'
+# require 'Dir'
+
+class Example
+    
+    #构造方法
+    def initialize(pathDir, projectName, groupName)
+        @pathDir = pathDir
+        @projectName = projectName
+        @groupName = groupName
+        #工程路径
+        @project_path = pathDir + '/' + projectName
+        #工程对象
+        @project = nil
+        @target = nil
+        @group = nil
+        @files = []
+        @resources = []
+        @sourceTypes = ['.xib','.storyboard','.xcassets']
+        
+    end
+    
+    #打开工程
+    def setupProject()
+        @project = Xcodeproj::Project.open(@project_path)
+    end
+    
+    #生成Target
+    def setupTarget()
+        @target = @project.new_target(:application, @groupName, :ios)
+    end
+    
+    #生成group
+    def setupExampleGroup
+        @group = @project.main_group.new_group(@groupName,"./#@groupName/")
+    end
+    
+    
+    #分类
+    def classify(directory)
+        Dir::foreach(directory) do |filename|
+            if File.directory?(directory + '/' + filename) && !filename.start_with?('.') && !filename.include?('xcassets') then
+                self.classify(directory + '/' + filename)
+                else
+                if filename.start_with?('.') then
+                    #nothing to do
+                    elsif @sourceTypes.include?(File.extname(filename)) then
+                    if File.exists?(directory + '/' + filename) then
+                        # puts directory + '/' + filename
+                        @resources << filename
+                        # @files << filename
+                    end
+                    else
+                    if File.exists?(directory + '/' + filename) then
+                        # puts '>>>' + directory + '/' + filename
+                        @files << filename
+                    end
+                end
+            end
+        end
+        
+    end
+    
+    #配置工程
+    def configure
+        @target.build_configuration_list.set_setting('INFOPLIST_FILE', "./Example/Info.plist")
+        @target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '4.2'
+            config.build_settings['PRODUCT_NAME'] = '$(TARGET_NAME)'
+            config.build_settings['PRODUCT_BUNDLE_IDENTIFIER'] = 'com.taihe.XcodeprojTests'
+        end
+    end
+    
+    #添加文件
+    def addFileRefrence
+        file_references = []
+        @files.each { |filename|
+            file_references << @group.new_reference(filename)
+        }
+        @target.add_file_references(file_references)
+    end
+    
+    #添加资源
+    def addResrouces
+        file_resources = []
+        @resources.each { |filename|
+            file_resources << @group.new_reference(filename)
+        }
+        @target.add_resources(file_resources)
+    end
+    
+    
+    #执行
+    def exec()
+        self.setupProject()
+        self.setupTarget()
+        self.setupExampleGroup()
+        self.configure()
+        self.classify(@pathDir + '/' + @groupName)
+        self.addFileRefrence()
+        self.addResrouces()
+        
+        # @target.add_file_references([@group.new_reference("AppDelegate.swift"),
+        # @group.new_reference("ViewController.swift"),
+        # @group.new_reference("Info.plist"),
+        # @group.new_reference("Base.lproj")])
+        # @target.add_resources([@group.new_reference("Assets.xcassets")])
+        
+        
+        @project.save
+    end
+end
+
+example = Example.new('./XcodeprojTests','XcodeprojTests.xcodeproj','Example')
+example.exec()
+require 'xcodeproj'
+# require 'Dir'
+
+class Example
+    
+    #构造方法
+    def initialize(pathDir, projectName, groupName)
+        @pathDir = pathDir
+        @projectName = projectName
+        @groupName = groupName
+        #工程路径
+        @project_path = pathDir + '/' + projectName
+        #工程对象
+        @project = nil
+        @target = nil
+        @group = nil
+        @files = []
+        @resources = []
+        @sourceTypes = ['.xib','.storyboard','.xcassets']
+        
+    end
+    
+    #打开工程
+    def setupProject()
+        @project = Xcodeproj::Project.open(@project_path)
+    end
+    
+    #生成Target
+    def setupTarget()
+        @target = @project.new_target(:application, @groupName, :ios)
+    end
+    
+    #生成group
+    def setupExampleGroup
+        @group = @project.main_group.new_group(@groupName,"./#@groupName/")
+    end
+    
+    
+    #分类
+    def classify(directory)
+        Dir::foreach(directory) do |filename|
+            if File.directory?(directory + '/' + filename) && !filename.start_with?('.') && !filename.include?('xcassets') then
+                self.classify(directory + '/' + filename)
+                else
+                if filename.start_with?('.') then
+                    #nothing to do
+                    elsif @sourceTypes.include?(File.extname(filename)) then
+                    if File.exists?(directory + '/' + filename) then
+                        # puts directory + '/' + filename
+                        @resources << filename
+                        # @files << filename
+                    end
+                    else
+                    if File.exists?(directory + '/' + filename) then
+                        # puts '>>>' + directory + '/' + filename
+                        @files << filename
+                    end
+                end
+            end
+        end
+        
+    end
+    
+    #配置工程
+    def configure
+        @target.build_configuration_list.set_setting('INFOPLIST_FILE', "./Example/Info.plist")
+        @target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '4.2'
+            config.build_settings['PRODUCT_NAME'] = '$(TARGET_NAME)'
+            config.build_settings['PRODUCT_BUNDLE_IDENTIFIER'] = 'com.taihe.XcodeprojTests'
+        end
+    end
+    
+    #添加文件
+    def addFileRefrence
+        file_references = []
+        @files.each { |filename|
+            file_references << @group.new_reference(filename)
+        }
+        @target.add_file_references(file_references)
+    end
+    
+    #添加资源
+    def addResrouces
+        file_resources = []
+        @resources.each { |filename|
+            file_resources << @group.new_reference(filename)
+        }
+        @target.add_resources(file_resources)
+    end
+    
+    
+    #执行
+    def exec()
+        self.setupProject()
+        self.setupTarget()
+        self.setupExampleGroup()
+        self.configure()
+        self.classify(@pathDir + '/' + @groupName)
+        self.addFileRefrence()
+        self.addResrouces()
+        
+        # @target.add_file_references([@group.new_reference("AppDelegate.swift"),
+        # @group.new_reference("ViewController.swift"),
+        # @group.new_reference("Info.plist"),
+        # @group.new_reference("Base.lproj")])
+        # @target.add_resources([@group.new_reference("Assets.xcassets")])
+        
+        
+        @project.save
+    end
+end
+
+example = Example.new('./XcodeprojTests','XcodeprojTests.xcodeproj','Example')
+example.exec()
+require 'xcodeproj'
+# require 'Dir'
+
+class Example
+    
+    #构造方法
+    def initialize(pathDir, projectName, groupName)
+        @pathDir = pathDir
+        @projectName = projectName
+        @groupName = groupName
+        #工程路径
+        @project_path = pathDir + '/' + projectName
+        #工程对象
+        @project = nil
+        @target = nil
+        @group = nil
+        @files = []
+        @resources = []
+        @sourceTypes = ['.xib','.storyboard','.xcassets']
+        
+    end
+    
+    #打开工程
+    def setupProject()
+        @project = Xcodeproj::Project.open(@project_path)
+    end
+    
+    #生成Target
+    def setupTarget()
+        @target = @project.new_target(:application, @groupName, :ios)
+    end
+    
+    #生成group
+    def setupExampleGroup
+        @group = @project.main_group.new_group(@groupName,"./#@groupName/")
+    end
+    
+    
+    #分类
+    def classify(directory)
+        Dir::foreach(directory) do |filename|
+            if File.directory?(directory + '/' + filename) && !filename.start_with?('.') && !filename.include?('xcassets') then
+                self.classify(directory + '/' + filename)
+                else
+                if filename.start_with?('.') then
+                    #nothing to do
+                    elsif @sourceTypes.include?(File.extname(filename)) then
+                    if File.exists?(directory + '/' + filename) then
+                        # puts directory + '/' + filename
+                        @resources << filename
+                        # @files << filename
+                    end
+                    else
+                    if File.exists?(directory + '/' + filename) then
+                        # puts '>>>' + directory + '/' + filename
+                        @files << filename
+                    end
+                end
+            end
+        end
+        
+    end
+    
+    #配置工程
+    def configure
+        @target.build_configuration_list.set_setting('INFOPLIST_FILE', "./Example/Info.plist")
+        @target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '4.2'
+            config.build_settings['PRODUCT_NAME'] = '$(TARGET_NAME)'
+            config.build_settings['PRODUCT_BUNDLE_IDENTIFIER'] = 'com.taihe.XcodeprojTests'
+        end
+    end
+    
+    #添加文件
+    def addFileRefrence
+        file_references = []
+        @files.each { |filename|
+            file_references << @group.new_reference(filename)
+        }
+        @target.add_file_references(file_references)
+    end
+    
+    #添加资源
+    def addResrouces
+        file_resources = []
+        @resources.each { |filename|
+            file_resources << @group.new_reference(filename)
+        }
+        @target.add_resources(file_resources)
+    end
+    
+    
+    #执行
+    def exec()
+        self.setupProject()
+        self.setupTarget()
+        self.setupExampleGroup()
+        self.configure()
+        self.classify(@pathDir + '/' + @groupName)
+        self.addFileRefrence()
+        self.addResrouces()
+        
+        # @target.add_file_references([@group.new_reference("AppDelegate.swift"),
+        # @group.new_reference("ViewController.swift"),
+        # @group.new_reference("Info.plist"),
+        # @group.new_reference("Base.lproj")])
+        # @target.add_resources([@group.new_reference("Assets.xcassets")])
+        
+        
+        @project.save
+    end
+end
+
+example = Example.new('./XcodeprojTests','XcodeprojTests.xcodeproj','Example')
+example.exec()

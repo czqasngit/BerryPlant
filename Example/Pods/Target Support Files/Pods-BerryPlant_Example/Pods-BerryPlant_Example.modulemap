@@ -1,0 +1,6 @@
+module Pods_BerryPlant_Example [system] {
+  umbrella header "Pods-BerryPlant_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

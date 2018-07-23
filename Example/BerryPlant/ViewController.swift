@@ -1,24 +1,39 @@
 //
 //  ViewController.swift
-//  BerryPlant
+//  Berry
 //
-//  Created by czqasngit on 07/23/2018.
+//  Created by czqasngit on 07/11/2018.
 //  Copyright (c) 2018 czqasngit. All rights reserved.
 //
 
 import UIKit
+import BerryPlant
 
 class ViewController: UIViewController {
 
+    
+    var imageView: BerryAnimateImage!
+    var data: Data!
+    public func configure(with data: Data) {
+        self.data = data
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.view.backgroundColor = UIColor.orange
+        setup()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func setup(){
+        self.imageView = BerryAnimateImage(data, frame: CGRect(x: 0, y: 200, width: self.view.frame.size.width, height: 300), cache: BerryAnimateImage.Policy.noCache)
+        self.view.addSubview(self.imageView)
+        self.imageView.contentMode = .scaleAspectFit
+        self.imageView.animationRepeatCount = 0
+        
     }
-
+    
+    @IBAction func start(sender: UIButton) {
+        guard !self.imageView._isAnimating else { return }
+        self.imageView.startAnimating()
+    }
 }
 

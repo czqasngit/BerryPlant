@@ -1,0 +1,1 @@
+../../../../../../BerryPlant/Library/WebP.framework/Headers/types.h
