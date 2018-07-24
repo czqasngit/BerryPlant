@@ -11,9 +11,9 @@ import Foundation
 //MARK: BerryAnimateFrame
 public struct BerryAnimateFrame {
     /// duration(s)
-    var duration: Double
+    public var duration: Double
     /// image data
-    var image: CGImage
+    public var image: CGImage
 }
 
 //MARK: BerryAnimateImage
