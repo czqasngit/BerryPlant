@@ -5,10 +5,13 @@
 [![License](https://img.shields.io/cocoapods/l/BerryPlant.svg?style=flat)](https://cocoapods.org/pods/BerryPlant)
 [![Platform](https://img.shields.io/cocoapods/p/BerryPlant.svg?style=flat)](https://cocoapods.org/pods/BerryPlant)
 
+
 A swift image kit for iOS to display/decode WebP,APNG,GIF,PNG,JPG and more.
+
 基于Swift的解码与显示WEBP, APNG, PNG, GIF, JPG 等更多格式图片的工具包
 
 Decode image on async thread and render when runloop idle.
+
 子线程解码图片并且在Runloop空闲的时候显示图片
 
 ![apng](http://pba6dsu9x.bkt.clouddn.com/apng.gif)
@@ -16,6 +19,7 @@ Decode image on async thread and render when runloop idle.
 
 ## Futures
 Decode and display WEBP,APNG,GIF,PNG and so on
+
 解码WEBP, APNG, GIF, PNG等更多格式的图片
 
 ## Usage
