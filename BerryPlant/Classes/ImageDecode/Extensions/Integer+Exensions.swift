@@ -33,13 +33,13 @@ extension UnsignedInteger {
     }
 }
 
-extension UInt32 {
-    func bigToHost() -> UInt32 {
+extension UnsignedInteger where Self == UInt32 {
+    func bigToHost() -> Self {
         return NSSwapBigIntToHost(self)
     }
 }
-extension UInt16 {
-    func bigToHost() -> UInt16 {
+extension UnsignedInteger where Self == UInt16  {
+    func bigToHost() -> Self {
         return NSSwapBigShortToHost(self)
     }
 }

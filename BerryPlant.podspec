@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'BerryPlant'
-    s.version          = '1.0.0'
+    s.version          = '1.0.1'
     s.summary          = 'Image Kit for decode/display WEBP, APNG, PNG, GIF, JPG and more write by swift'
     s.description      = 'A swift image kit for iOS to display/decode WebP,APNG,GIF,PNG,JPG and more.\
     Decode image on async thread and render when runloop idle.'

@@ -1,10 +1,11 @@
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
 FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/../../BerryPlant/Library"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/BerryPlant"
 LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/BerryPlant"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/BerryPlant" -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/BerryPlant/BerryPlant.modulemap"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"z"
-OTHER_SWIFT_FLAGS = $(inherited) -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/BerryPlant/BerryPlant.modulemap"
+OTHER_CFLAGS = $(inherited) -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/BerryPlant/BerryPlant.modulemap" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/BerryPlant"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"BerryPlant" -l"z" -framework "WebP"
+OTHER_SWIFT_FLAGS = $(inherited) -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/BerryPlant/BerryPlant.modulemap" $(inherited) "-D" "COCOAPODS"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.

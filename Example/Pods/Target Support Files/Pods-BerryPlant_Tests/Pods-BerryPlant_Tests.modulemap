@@ -1,4 +1,4 @@
-framework module Pods_BerryPlant_Tests {
+module Pods_BerryPlant_Tests [system] {
   umbrella header "Pods-BerryPlant_Tests-umbrella.h"
 
   export *
