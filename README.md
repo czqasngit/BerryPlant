@@ -5,6 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/BerryPlant.svg?style=flat)](https://cocoapods.org/pods/BerryPlant)
 [![Platform](https://img.shields.io/cocoapods/p/BerryPlant.svg?style=flat)](https://cocoapods.org/pods/BerryPlant)
 
+https://www.jianshu.com/p/b83ec03ff41c
 
 A swift image kit for iOS to display/decode WebP,APNG,GIF,PNG,JPG and more.
 
