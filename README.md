@@ -6,7 +6,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/BerryPlant.svg?style=flat)](https://cocoapods.org/pods/BerryPlant)
 
 ## Refrence
-APNG - https://en.wikipedia.org/wiki/APNG#History
+APNG - https://en.wikipedia.org/wiki/APNG#History 
 PNG - https://en.wikipedia.org/wiki/Portable_Network_Graphics
 ## JianShu Article
 https://www.jianshu.com/p/b83ec03ff41c

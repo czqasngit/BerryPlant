@@ -71,7 +71,7 @@ public class BerryAPNGDecoder: BerryImageProvider {
     func parseChunks() {
         var offset = 8
         var stop = false
-        var firstHalfEnd = false
+        var beforeIDATA = true
         while !stop {
             let chunkDataLength = UInt32.from(of: data, from: offset, to: offset + 4).bigToHost()
             let chunkLength = 4 + 4 + chunkDataLength + 4
@@ -85,11 +85,11 @@ public class BerryAPNGDecoder: BerryImageProvider {
                 stop = true
             }
             offset += numericCast(chunkLength)
-            if !firstHalfEnd && chunk.type == "fcTL" {
-                firstHalfEnd = true
+            if chunk.type == "IDAT" {
+                beforeIDATA = false
             }
             if chunk.type != "fcTL" && chunk.type != "fdAT" && chunk.type != "IDAT", chunk.type != "acTL" {
-                if !firstHalfEnd { common.appendFirstHalf(chunk) }
+                if beforeIDATA { common.appendFirstHalf(chunk) }
                 else { common.appendSecondHalf(chunk) }
             }
             if chunk.type == "acTL" {
@@ -98,6 +98,7 @@ public class BerryAPNGDecoder: BerryImageProvider {
             if chunk.type == "IHDR" {
                 self.ihdr = BerryAPNGIHDR(with: data.subdata(in: (chunk.start + 8)..<chunk.end - 4))
             }
+            
         }
         for var i in 0..<chunks.count {
             if chunks[i].type == "fcTL" {
