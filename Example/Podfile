@@ -10,7 +10,7 @@ target 'BerryPlant_Tests' do
 end
 
 post_install do |installer|
-    FixBerryUmbrella()
+#    FixBerryUmbrella()
 end
 
 
