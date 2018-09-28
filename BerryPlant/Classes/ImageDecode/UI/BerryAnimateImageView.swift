@@ -125,7 +125,6 @@ public class BerryAnimateImageView: UIImageView {
 }
 
 //MARK: 
-extension BerryAnimateImageView: UIAsyncable {}
 extension Berry where Base == BerryAnimateImageView {
     func setImage(image: UIImage){
         self.submitTransaction {

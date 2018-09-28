@@ -24,4 +24,15 @@ public extension UIAsyncable {
 }
 
 
+//MARK:
+extension BerryAnimateImageView: UIAsyncable {}
+extension Berry where Base == UIImageView {
+    func setImage(image: UIImage){
+        self.submitTransaction {
+            self.base.image = image
+        }
+    }
+}
+
+
 
