@@ -10,13 +10,10 @@
 #endif
 #endif
 
-#import "decode.h"
-#import "encode.h"
-#import "types.h"
-
 #import "WebP/decode.h"
-                             #import "WebP/encode.h"
-                             #import "WebP/types.h"
-                             FOUNDATION_EXPORT double BerryPlantVersionNumber;
+#import "WebP/encode.h"
+#import "WebP/types.h"
+
+FOUNDATION_EXPORT double BerryPlantVersionNumber;
 FOUNDATION_EXPORT const unsigned char BerryPlantVersionString[];
 
