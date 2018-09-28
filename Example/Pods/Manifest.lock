@@ -1,7 +1,7 @@
 PODS:
-  - BerryPlant (1.0.0):
-    - BerryPlant/WebP (= 1.0.0)
-  - BerryPlant/WebP (1.0.0)
+  - BerryPlant (1.0.2):
+    - BerryPlant/WebP (= 1.0.2)
+  - BerryPlant/WebP (1.0.2)
 
 DEPENDENCIES:
   - BerryPlant (from `../`)
@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BerryPlant: b5f75df0e9cff497f1815328a749ce256d90a4b8
+  BerryPlant: 80f87fe2256aa792a0cc46adaeafcfb9ad913476
 
 PODFILE CHECKSUM: e2ff1bb1513a0c71a6bc37bec479c9fb8107e8bb
 
