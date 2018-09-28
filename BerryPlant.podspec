@@ -22,11 +22,10 @@ Pod::Spec.new do |s|
     s.source_files = 'BerryPlant/Classes/**/*'
     s.pod_target_xcconfig = { 'HEADER_SEARCH_PATHS' => '${PODS_ROOT}/Headers/Public/BerryPlant/WebP'  }
     s.subspec 'WebP' do |ss|
-        #ss.source_files = 'BerryPlant/Library/WebP.framework/Headers/**.{h,m}'
+        ss.source_files = 'BerryPlant/Library/WebP.framework/Headers/**.{h,m}'
         #ss.public_header_files = 'BerryPlant/Library/WebP.framework/Headers/**.h'
         ss.vendored_frameworks = 'BerryPlant/Library/WebP.framework'
         ss.preserve_paths = 'BerryPlant/Library/WebP.framework'
         ss.pod_target_xcconfig = { 'LD_RUNPATH_SEARCH_PATHS' => '$(PODS_ROOT)/BerryPlant/Library/' }
     end
-    #s.xcconfig = { 'SWIFT_OBJC_BRIDGING_HEADER' => 'BerryPlant-Bridging-Header.h' }
 end
