@@ -1,4 +1,4 @@
-module Pods_BerryPlant_Example {
+framework module Pods_BerryPlant_Example {
   umbrella header "Pods-BerryPlant_Example-umbrella.h"
 
   export *

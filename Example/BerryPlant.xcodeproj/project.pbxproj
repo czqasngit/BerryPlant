@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3D92CF3A61977DF86C393721 /* libPods-BerryPlant_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D240CF43F896B5D77CC50729 /* libPods-BerryPlant_Tests.a */; };
+		08E75CD713DE8B55D700790A /* Pods_BerryPlant_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 334634585DF0C698308FF8D6 /* Pods_BerryPlant_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		640A044BB51CD40E17AF2161 /* libPods-BerryPlant_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 676B26E809A79461033A0624 /* libPods-BerryPlant_Example.a */; };
+		90F15B86A0F17D4AA675BA76 /* Pods_BerryPlant_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5BFF25836134D591000B2F7 /* Pods_BerryPlant_Tests.framework */; };
 		C37BAA9B211BD32300069B8F /* BerryImageFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37BAA99211BD31F00069B8F /* BerryImageFormatTests.swift */; };
 		C37BAA9C211BD36F00069B8F /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3ECB8922105BD650078A695 /* 1.jpg */; };
 		C37BAA9D211BD36F00069B8F /* apng.gif in Resources */ = {isa = PBXBuildFile; fileRef = C3ECB8942105BD650078A695 /* apng.gif */; };
@@ -54,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		334634585DF0C698308FF8D6 /* Pods_BerryPlant_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BerryPlant_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34300545A996D92810B31312 /* BerryPlant.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = BerryPlant.podspec; path = ../BerryPlant.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		607FACD01AFB9204008FA782 /* BerryPlant_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BerryPlant_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,7 +66,6 @@
 		607FACE51AFB9204008FA782 /* BerryPlant_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BerryPlant_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		676B26E809A79461033A0624 /* libPods-BerryPlant_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BerryPlant_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E98C22ADC33F69AA8CACCF8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		93018783ADC20FE609C6CE3E /* Pods-BerryPlant_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BerryPlant_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BerryPlant_Tests/Pods-BerryPlant_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		C37BAA99211BD31F00069B8F /* BerryImageFormatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BerryImageFormatTests.swift; sourceTree = "<group>"; };
@@ -86,9 +86,9 @@
 		C3F80B45211BE82A00D134B5 /* DecoderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderTests.swift; sourceTree = "<group>"; };
 		C3FF5AAA211BDAAA005F02D5 /* CFDictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFDictionaryTests.swift; sourceTree = "<group>"; };
 		C3FF5AAD211BDE3D005F02D5 /* DataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTests.swift; sourceTree = "<group>"; };
-		D240CF43F896B5D77CC50729 /* libPods-BerryPlant_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BerryPlant_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D66138DF4875D8F54A25C32A /* Pods-BerryPlant_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BerryPlant_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BerryPlant_Tests/Pods-BerryPlant_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		DC14CAF9059F1D29C6247035 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		E5BFF25836134D591000B2F7 /* Pods_BerryPlant_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BerryPlant_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC6342D6328A7CA09A74A0D3 /* Pods-BerryPlant_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BerryPlant_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BerryPlant_Example/Pods-BerryPlant_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		F00A7E45849E840548D1F4E5 /* Pods-BerryPlant_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BerryPlant_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-BerryPlant_Example/Pods-BerryPlant_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,7 +99,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3A199862188428900330236 /* WebP.framework in Frameworks */,
-				640A044BB51CD40E17AF2161 /* libPods-BerryPlant_Example.a in Frameworks */,
+				08E75CD713DE8B55D700790A /* Pods_BerryPlant_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,7 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D92CF3A61977DF86C393721 /* libPods-BerryPlant_Tests.a in Frameworks */,
+				90F15B86A0F17D4AA675BA76 /* Pods_BerryPlant_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,8 +117,8 @@
 		306EF2DB65425DAAB3A42371 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				676B26E809A79461033A0624 /* libPods-BerryPlant_Example.a */,
-				D240CF43F896B5D77CC50729 /* libPods-BerryPlant_Tests.a */,
+				334634585DF0C698308FF8D6 /* Pods_BerryPlant_Example.framework */,
+				E5BFF25836134D591000B2F7 /* Pods_BerryPlant_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -249,6 +249,8 @@
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
+				E52A51C28B85FA8976B5BA28 /* [CP] Embed Pods Frameworks */,
+				178E4A1981F5C8FED8CF0A07 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -267,6 +269,8 @@
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
+				52B198DF5FD35758DB180731 /* [CP] Embed Pods Frameworks */,
+				4C912386484D7E4854492F25 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -358,6 +362,54 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		178E4A1981F5C8FED8CF0A07 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BerryPlant_Example/Pods-BerryPlant_Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4C912386484D7E4854492F25 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BerryPlant_Tests/Pods-BerryPlant_Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		52B198DF5FD35758DB180731 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BerryPlant_Tests/Pods-BerryPlant_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BerryPlant/BerryPlant.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BerryPlant.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BerryPlant_Tests/Pods-BerryPlant_Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		555FABA55E05C9771B3854BC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -392,6 +444,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E52A51C28B85FA8976B5BA28 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BerryPlant_Example/Pods-BerryPlant_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BerryPlant/BerryPlant.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BerryPlant.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BerryPlant_Example/Pods-BerryPlant_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

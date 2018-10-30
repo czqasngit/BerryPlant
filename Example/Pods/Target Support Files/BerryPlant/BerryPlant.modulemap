@@ -1,4 +1,4 @@
-module BerryPlant {
+framework module BerryPlant {
   umbrella header "BerryPlant-umbrella.h"
 
   export *

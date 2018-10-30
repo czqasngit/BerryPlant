@@ -7,38 +7,41 @@
 
 import Foundation
 
-public protocol BerryWebpDecoderProtocol {
-    func getInfo(_ data: Data) -> (width: Int32, height: Int32)
-    func decode(_ data: Data, width: inout Int32, height: inout Int32) -> UnsafeMutablePointer<UInt8>?
+public protocol WebPDecoderProtocol {
+    func getWebPInfo(_ data: Data) -> (width: Int32, height: Int32)
+    func decodeWebP(_ data: Data, width: inout Int32, height: inout Int32) -> UnsafeMutablePointer<UInt8>?
     func decodeComplete(_ context: UnsafeMutablePointer<UInt8>)
+}
+
+public class WebPDecoderImplManager {
+    static public let shared = WebPDecoderImplManager()
+    public var webp: WebPDecoderProtocol? = nil
+    private init() {
+        
+    }
 }
 
 public class BerryWebpDecoder: BerryImageProvider {
     
-//    var bytes: UnsafeMutablePointer<UInt8>
     var data: Data
     var count: Int
     var width: Int32 = 0
     var height: Int32 = 0
-    var webp: BerryWebpDecoderProtocol
-//    deinit {
-//        bytes.deallocate()
-//    }
-    public init(_ data: Data, webp: BerryWebpDecoderProtocol) {
+    var webp: WebPDecoderProtocol
+
+    public init(_ data: Data, webp: WebPDecoderProtocol) {
         self.webp = webp
         precondition(BerryImageFormat.getImageFormat(data) == .webp, "The data is not WEBP stream !")
-//        self.bytes = data.copyAllBytes()
         self.data = data
         self.count = data.count
-//        WebPGetInfo(self.bytes, self.count, &width, &height)
-        let result = self.webp.getInfo(data)
+        let result = self.webp.getWebPInfo(data)
         self.width = result.width
         self.height = result.height
     }
     
     func decode() -> CGImage? {
         var result: CGImage? = nil
-        guard let decodeDataPointer = self.webp.decode(self.data, width: &self.width, height: &self.height)/*WebPDecodeRGBA(bytes, count, &width, &height)*/ else {
+        guard let decodeDataPointer = self.webp.decodeWebP(self.data, width: &self.width, height: &self.height) else {
             return nil
         }
         let size = width * height * 4
@@ -50,20 +53,16 @@ public class BerryWebpDecoder: BerryImageProvider {
                                 bitsPerPixel: 4 * 8,
                                 bytesPerRow: numericCast(width) * 4,
                                 space: CGColorSpaceCreateDeviceRGB(),
-                                bitmapInfo: [CGBitmapInfo.init(rawValue: 0)],
+                                bitmapInfo: [CGBitmapInfo.init(rawValue: 0), CGBitmapInfo(rawValue: CGImageAlphaInfo.noneSkipLast.rawValue)],
                                 provider: dataProvider,
                                 decode: nil,
                                 shouldInterpolate: false,
                                 intent: CGColorRenderingIntent.defaultIntent) {
                 result = bitmap
         }
-        
-//        WebPFree(decodeDataPointer)
         self.webp.decodeComplete(decodeDataPointer)
         return result
-        
     }
-    
     public func readImage(at index: Int) -> BerryAnimateFrame? {
         guard let cgImage = self.decode() else { return nil }
         let frame = BerryAnimateFrame(duration: 0, image: cgImage)
