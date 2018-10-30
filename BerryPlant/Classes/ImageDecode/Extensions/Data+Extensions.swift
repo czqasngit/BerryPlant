@@ -33,7 +33,7 @@ extension Data {
     /// Copy all bytes
     ///
     /// - Returns: return un deallocate bytes
-    func copyAllBytes() -> UnsafeMutablePointer<UInt8> {
+    public func copyAllBytes() -> UnsafeMutablePointer<UInt8> {
         return self.copyBytes(from: 0, to: self.count)
     }
 }

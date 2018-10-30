@@ -51,7 +51,7 @@ public enum BerryImageFormat {
     
 }
 
-public func FindImageDecoder(with data: Data) -> BerryImageProvider {
+public func FindImageDecoder(with data: Data, webp: BerryWebpDecoderProtocol? = nil) -> BerryImageProvider {
     let imageProvider: BerryImageProvider!
     let format = BerryImageFormat.getImageFormat(data)
     switch format {
@@ -60,7 +60,8 @@ public func FindImageDecoder(with data: Data) -> BerryImageProvider {
     case .gif:
         imageProvider = BerryGIFDecoder(data)
     case .webp:
-        imageProvider = BerryWebpDecoder(data)
+        precondition(webp != nil)
+        imageProvider = BerryWebpDecoder(data, webp: webp!)
     default:
         imageProvider = BerryDefaultDecoder(data)
     }

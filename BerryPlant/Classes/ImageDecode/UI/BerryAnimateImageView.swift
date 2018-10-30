@@ -51,8 +51,8 @@ public class BerryAnimateImageView: UIImageView {
         super.init(frame: frame)
         self.showNextImage()
     }
-    public convenience init(_ data: Data, frame: CGRect, cache policy: Policy = .noCache) {
-        let decoder = FindImageDecoder(with: data)
+    public convenience init(_ data: Data, frame: CGRect, cache policy: Policy = .noCache, webp: BerryWebpDecoderProtocol? = nil) {
+        let decoder = FindImageDecoder(with: data, webp:  webp)
         self.init(with: decoder, frame: frame, cache: policy)
     }
     
