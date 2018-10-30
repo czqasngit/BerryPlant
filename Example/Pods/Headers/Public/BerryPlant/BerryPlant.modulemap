@@ -1,6 +1,1 @@
-module BerryPlant [system] {
-  umbrella header "BerryPlant-umbrella.h"
-
-  export *
-  module * { export * }
-}
+/Volumes/Work/Developer/Library/BerryPlant/Example/Pods/Target Support Files/BerryPlant/BerryPlant.modulemap

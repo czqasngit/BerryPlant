@@ -1,1 +1,0 @@
-../../../../../../BerryPlant/Library/WebP.framework/Headers/encode.h
