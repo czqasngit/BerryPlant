@@ -20,7 +20,7 @@ class ViewController: UIViewController, WebPDecoderProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.orange
-        WebPDecoderImplManager.shared.webp = self
+        WebPDecoderImplManager.shared.registerWebPDecoderImpl(self)
         setup()
     }
     

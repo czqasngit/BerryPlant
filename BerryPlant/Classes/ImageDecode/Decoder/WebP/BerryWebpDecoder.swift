@@ -15,7 +15,10 @@ public protocol WebPDecoderProtocol {
 
 public class WebPDecoderImplManager {
     static public let shared = WebPDecoderImplManager()
-    public var webp: WebPDecoderProtocol? = nil
+    internal var webp: WebPDecoderProtocol? = nil
+    public func registerWebPDecoderImpl(_ webp: WebPDecoderProtocol) {
+        self.webp = webp
+    }
     private init() {
         
     }

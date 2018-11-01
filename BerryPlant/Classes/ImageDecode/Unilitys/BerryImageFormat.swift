@@ -61,7 +61,7 @@ public func FindImageDecoder(with data: Data) -> BerryImageProvider {
         imageProvider = BerryGIFDecoder(data)
     case .webp:
         guard let webp = WebPDecoderImplManager.shared.webp else {
-            precondition(false, "WebPDecoderImplManager.shared.webp can't be nil.")
+            precondition(false, "Please call WebPDecoderImplManager.shared.registerWebPDecoderImpl(_ webp: WebPDecoderProtocol) to register webp decoder.")
         }
         imageProvider = BerryWebpDecoder(data, webp: webp)
     default:

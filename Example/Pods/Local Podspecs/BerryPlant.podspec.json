@@ -1,6 +1,6 @@
 {
   "name": "BerryPlant",
-  "version": "1.0.3",
+  "version": "1.0.0",
   "summary": "Image Kit for decode/display WEBP, APNG, PNG, GIF, JPG and more write by swift",
   "description": "A swift image kit for iOS to display/decode WebP,APNG,GIF,PNG,JPG and more.\\\n    Decode image on async thread and render when runloop idle.",
   "homepage": "https://github.com/czqasngit/BerryPlant",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/czqasngit/BerryPlant.git",
-    "tag": "1.0.3"
+    "tag": "1.0.0"
   },
   "swift_version": "4.0",
   "platforms": {
