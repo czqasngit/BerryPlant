@@ -60,10 +60,13 @@ public func FindImageDecoder(with data: Data) -> BerryImageProvider {
     case .gif:
         imageProvider = BerryGIFDecoder(data)
     case .webp:
-        guard let webp = WebPDecoderImplManager.shared.webp else {
-            precondition(false, "Please call WebPDecoderImplManager.shared.registerWebPDecoderImpl(_ webp: WebPDecoderProtocol) to register webp decoder.")
+        if let webp = WebPDecoderImplManager.shared.webp {
+            imageProvider = BerryWebpDecoder(data, webp: webp)
+        } else {
+            precondition(false, "[Warning] Please call WebPDecoderImplManager.shared.registerWebPDecoderImpl(_ webp: WebPDecoderProtocol) to register webp decoder.")
+            imageProvider = nil
         }
-        imageProvider = BerryWebpDecoder(data, webp: webp)
+        
     default:
         imageProvider = BerryDefaultDecoder(data)
     }
