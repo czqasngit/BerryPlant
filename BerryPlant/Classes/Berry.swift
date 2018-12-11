@@ -26,7 +26,7 @@ public extension UIAsyncable {
 
 //MARK:
 extension UIImageView: UIAsyncable { }
-extension Berry where Base == UIImageView {
+extension Berry where Base: UIImageView {
     public func setImage(image: UIImage){
         self.submitTransaction {
             self.base.image = image
@@ -34,7 +34,7 @@ extension Berry where Base == UIImageView {
     }
 }
 extension UIButton: UIAsyncable { }
-extension Berry where Base == UIButton {
+extension Berry where Base: UIButton {
     public func setImage(image: UIImage, state: UIControlState) {
         self.submitTransaction {
             self.base.setImage(image, for: state)
