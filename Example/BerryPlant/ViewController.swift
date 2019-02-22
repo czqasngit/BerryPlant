@@ -46,7 +46,7 @@ class ViewController: UIViewController {
     }
     
     func setup(){
-        self.imageView = BerryAnimateImageView(data, frame: CGRect(x: 0, y: 200, width: self.view.frame.size.width, height: 300), cache: BerryAnimateImageView.Policy.noCache)
+        self.imageView = BerryAnimateImageView(frame: CGRect(x: 0, y: 200, width: self.view.frame.size.width, height: 300), cache: BerryAnimateImageView.Policy.noCache)
         self.view.addSubview(self.imageView)
         self.imageView.contentMode = .scaleAspectFit
         self.imageView.animationRepeatCount = 0
@@ -57,7 +57,8 @@ class ViewController: UIViewController {
     
     
     @IBAction func start(sender: UIButton) {
-        guard !self.imageView._isAnimating else { return }
+        guard !self.imageView.isAnimating else { return }
+        self.imageView.set(animated: data)
         self.imageView.startAnimating()
     }
 }

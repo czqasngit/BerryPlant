@@ -34,7 +34,7 @@ open class BerryAnimateImageView: UIImageView {
     var link: CADisplayLink?
     var cache = [Int: CGImage]()
     var loopCount = 0
-    var _animating = false
+//    var _animating = false
     
     deinit {
         if let link = self.link {
@@ -64,18 +64,19 @@ open class BerryAnimateImageView: UIImageView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @available(iOS, deprecated: 8.0, message: "use _isAnimating instead of")
-    open override var isAnimating: Bool  {
-        return self._isAnimating
-    }
-    public var _isAnimating: Bool  {
-        return self._animating
-    }
+//    @available(iOS, deprecated: 8.0, message: "use _isAnimating instead of")
+//    open override var isAnimating: Bool  {
+//        return self._isAnimating
+//    }
+//    public var _isAnimating: Bool  {
+//        return self._animating
+//    }
     func showNextImage() {
+        guard let privider = self.imageProvider else { return }
         if let cacheCGImage = self.cache[self.currentIndex] {
             self.async.setImage(image: UIImage(cgImage: cacheCGImage))
         } else {
-            if let frame = self.imageProvider?.readImage(at: currentIndex) {
+            if let frame = privider.readImage(at: currentIndex) {
                 if self.policy == .cacheAfterShow {
                     self.cache[currentIndex] = frame.image
                 }
@@ -108,16 +109,17 @@ open class BerryAnimateImageView: UIImageView {
         self.imageProvider = FindImageDecoder(with: data)
         self.numberOfFrames = imageProvider?.numberOfFrames() ?? 0
         self.cavansSize = imageProvider?.canvasSize() ?? .zero
+        self.showNextImage()
     }
     open override func stopAnimating() {
         self.link?.invalidate()
         self.link = nil
-        _animating = false
+//        _animating = false
         
     }
     open override func startAnimating() {
-        _animating = true
-        guard self.numberOfFrames > 0 else { return }
+        guard self.imageProvider != nil else { return }
+        guard self.numberOfFrames > 1 else { return }
         DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async {
             if self.policy == .cacheAllBeforeShow {
                 for i in 0..<self.numberOfFrames {
