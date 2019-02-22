@@ -17,7 +17,7 @@ public struct BerryAnimateFrame {
 }
 
 //MARK: BerryAnimateImage
-public class BerryAnimateImageView: UIImageView {
+open class BerryAnimateImageView: UIImageView {
     
     public enum Policy {
         case noCache
@@ -25,7 +25,7 @@ public class BerryAnimateImageView: UIImageView {
         case cacheAllBeforeShow
     }
     
-    var imageProvider: BerryImageProvider
+    var imageProvider: BerryImageProvider?
     var currentIndex: Int = 0
     var currentDelay: Double = 0
     var policy: Policy
@@ -43,17 +43,21 @@ public class BerryAnimateImageView: UIImageView {
         self.link = nil
         print(#file,#function)
     }
-    public init(with imageProvider: BerryImageProvider, frame: CGRect, cache policy: Policy = .noCache) {
+    public init(with imageProvider: BerryImageProvider?, frame: CGRect, cache policy: Policy = .noCache) {
         self.imageProvider = imageProvider
-        self.numberOfFrames = imageProvider.numberOfFrames()
-        self.cavansSize = imageProvider.canvasSize()
+        self.numberOfFrames = imageProvider?.numberOfFrames() ?? 0
+        self.cavansSize = imageProvider?.canvasSize() ?? .zero
         self.policy = policy
         super.init(frame: frame)
         self.showNextImage()
     }
-    public convenience init(_ data: Data, frame: CGRect, cache policy: Policy = .noCache) {
-        let decoder = FindImageDecoder(with: data)
-        self.init(with: decoder, frame: frame, cache: policy)
+    public convenience init(_ data: Data? = nil, frame: CGRect, cache policy: Policy = .noCache) {
+        if let data = data {
+            let decoder = FindImageDecoder(with: data)
+            self.init(with: decoder, frame: frame, cache: policy)
+        } else {
+            self.init(with: nil, frame: frame, cache: policy)
+        }
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -61,8 +65,8 @@ public class BerryAnimateImageView: UIImageView {
     }
     
     @available(iOS, deprecated: 8.0, message: "use _isAnimating instead of")
-    public override var isAnimating: Bool  {
-        return super.isAnimating
+    open override var isAnimating: Bool  {
+        return self._isAnimating
     }
     public var _isAnimating: Bool  {
         return self._animating
@@ -71,7 +75,7 @@ public class BerryAnimateImageView: UIImageView {
         if let cacheCGImage = self.cache[self.currentIndex] {
             self.async.setImage(image: UIImage(cgImage: cacheCGImage))
         } else {
-            if let frame = self.imageProvider.readImage(at: currentIndex) {
+            if let frame = self.imageProvider?.readImage(at: currentIndex) {
                 if self.policy == .cacheAfterShow {
                     self.cache[currentIndex] = frame.image
                 }
@@ -95,23 +99,29 @@ public class BerryAnimateImageView: UIImageView {
         self.currentDelay -= linkDuration
         if self.currentDelay <= 0 {
             self.showNextImage()
-            let delay = imageProvider.frameDuration(at: self.currentIndex)
-            self.currentDelay = (self.currentDelay + delay)
+            if let delay = imageProvider?.frameDuration(at: self.currentIndex) {
+                self.currentDelay = (self.currentDelay + delay)
+            }
         }
     }
-    public override func stopAnimating() {
+    open func set(animated data: Data) {
+        self.imageProvider = FindImageDecoder(with: data)
+        self.numberOfFrames = imageProvider?.numberOfFrames() ?? 0
+        self.cavansSize = imageProvider?.canvasSize() ?? .zero
+    }
+    open override func stopAnimating() {
         self.link?.invalidate()
         self.link = nil
         _animating = false
         
     }
-    public override func startAnimating() {
+    open override func startAnimating() {
         _animating = true
         guard self.numberOfFrames > 0 else { return }
         DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async {
             if self.policy == .cacheAllBeforeShow {
                 for i in 0..<self.numberOfFrames {
-                    if let frame = self.imageProvider.readImage(at: i) {
+                    if let frame = self.imageProvider?.readImage(at: i) {
                        self.cache[i] = frame.image
                     }
                 }
@@ -120,13 +130,12 @@ public class BerryAnimateImageView: UIImageView {
             self.link = CADisplayLink(target: proxy, selector: #selector(BerryAnimateImageView.render))
             self.link!.add(to: RunLoop.main, forMode: RunLoopMode.commonModes)
         }
-        
     }
 }
 
 //MARK: 
 extension Berry where Base == BerryAnimateImageView {
-    func setImage(image: UIImage){
+    func setImage(image: UIImage) {
         self.submitTransaction {
             self.base.image = image
         }
