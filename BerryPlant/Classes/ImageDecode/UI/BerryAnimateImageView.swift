@@ -37,6 +37,8 @@ open class BerryAnimateImageView: UIImageView {
 //    var _animating = false
     
     deinit {
+        self.cache.removeAll()
+        self.imageProvider = nil
         if let link = self.link {
             link.invalidate()
         }
