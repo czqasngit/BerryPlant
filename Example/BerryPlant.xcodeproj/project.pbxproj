@@ -15,6 +15,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		90F15B86A0F17D4AA675BA76 /* Pods_BerryPlant_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5BFF25836134D591000B2F7 /* Pods_BerryPlant_Tests.framework */; };
+		C3618FB92220DCF800550B58 /* TaskCancelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3618FB82220DCF800550B58 /* TaskCancelViewController.swift */; };
 		C37BAA9B211BD32300069B8F /* BerryImageFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37BAA99211BD31F00069B8F /* BerryImageFormatTests.swift */; };
 		C37BAA9C211BD36F00069B8F /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3ECB8922105BD650078A695 /* 1.jpg */; };
 		C37BAA9D211BD36F00069B8F /* apng.gif in Resources */ = {isa = PBXBuildFile; fileRef = C3ECB8942105BD650078A695 /* apng.gif */; };
@@ -68,6 +69,7 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		7E98C22ADC33F69AA8CACCF8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		93018783ADC20FE609C6CE3E /* Pods-BerryPlant_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BerryPlant_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BerryPlant_Tests/Pods-BerryPlant_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		C3618FB82220DCF800550B58 /* TaskCancelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCancelViewController.swift; sourceTree = "<group>"; };
 		C37BAA99211BD31F00069B8F /* BerryImageFormatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BerryImageFormatTests.swift; sourceTree = "<group>"; };
 		C3A199852188428900330236 /* WebP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebP.framework; sourceTree = "<group>"; };
 		C3A19987218842C500330236 /* BerryPlant_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BerryPlant_Example-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				C3618FB82220DCF800550B58 /* TaskCancelViewController.swift */,
 			);
 			name = "Example for BerryPlant";
 			path = BerryPlant;
@@ -440,6 +443,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				C3618FB92220DCF800550B58 /* TaskCancelViewController.swift in Sources */,
 				C3ECB8A52105BD750078A695 /* TableViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);

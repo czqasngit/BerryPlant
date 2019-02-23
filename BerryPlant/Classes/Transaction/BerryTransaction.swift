@@ -11,6 +11,7 @@ public typealias AsycnDoBlock = () -> ()
 
 public struct BerryTransaction {
     var asyncDoBlock: AsycnDoBlock
+    var isCancel: Bool = false
     public init(asyncDoBlock block: @escaping AsycnDoBlock) {
         self.asyncDoBlock = block
     }

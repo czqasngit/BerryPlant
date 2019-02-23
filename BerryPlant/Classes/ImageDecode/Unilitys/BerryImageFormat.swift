@@ -8,17 +8,17 @@
 import Foundation
 
 
-public enum BerryImageFormat {
+public enum BerryImageFormat: Int {
     //BerryAPNGDecoder
-    case apng
+    case apng = 0
     //BerryDefaultDecoder
-    case png
+    case png = 1
     //BerryWebpDecoder
-    case webp
+    case webp = 2
     //BerryGifDecoder
-    case gif
+    case gif = 3
     //BerryDefaultDecoder
-    case other
+    case other = 999
     
     static public func getImageFormat(_ data: Data) -> BerryImageFormat {
         let header = data.subArray(from: 0, to: 4)
