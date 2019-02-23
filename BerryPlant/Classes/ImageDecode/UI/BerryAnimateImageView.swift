@@ -138,13 +138,4 @@ open class BerryAnimateImageView: UIImageView {
     }
 }
 
-//MARK: 
-extension Berry where Base == BerryAnimateImageView {
-    func setImage(image: UIImage) {
-        self.submitTransaction {
-            self.base.image = image
-        }
-    }
-}
-
 
