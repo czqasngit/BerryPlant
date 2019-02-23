@@ -65,14 +65,6 @@ open class BerryAnimateImageView: UIImageView {
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-//    @available(iOS, deprecated: 8.0, message: "use _isAnimating instead of")
-//    open override var isAnimating: Bool  {
-//        return self._isAnimating
-//    }
-//    public var _isAnimating: Bool  {
-//        return self._animating
-//    }
     func showNextImage() {
         guard let privider = self.imageProvider else { return }
         if let cacheCGImage = self.cache[self.currentIndex] {
@@ -117,7 +109,6 @@ open class BerryAnimateImageView: UIImageView {
     open override func stopAnimating() {
         self.link?.invalidate()
         self.link = nil
-//        _animating = false
         
     }
     open override func startAnimating() {
