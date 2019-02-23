@@ -106,6 +106,7 @@ open class BerryAnimateImageView: UIImageView {
         }
     }
     open func set(animated data: Data) {
+        self.cache.removeAll()
         self.imageProvider = FindImageDecoder(with: data)
         self.numberOfFrames = imageProvider?.numberOfFrames() ?? 0
         self.cavansSize = imageProvider?.canvasSize() ?? .zero
