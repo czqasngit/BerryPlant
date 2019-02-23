@@ -34,7 +34,7 @@ open class BerryAnimateImageView: UIImageView {
     var link: CADisplayLink?
     var cache = [Int: CGImage]()
     var loopCount = 0
-//    var _animating = false
+    //    var _animating = false
     
     deinit {
         self.cache.removeAll()
@@ -87,7 +87,7 @@ open class BerryAnimateImageView: UIImageView {
             self.stopAnimating()
         }
     }
-   
+    
     @objc func render(){
         guard let link = self.link else { return }
         let linkDuration = link.duration
@@ -109,24 +109,26 @@ open class BerryAnimateImageView: UIImageView {
     open override func stopAnimating() {
         self.link?.invalidate()
         self.link = nil
-        
     }
     open override func startAnimating() {
+        
         guard self.imageProvider != nil else { return }
         guard self.numberOfFrames > 1 else { return }
         DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async {
             if self.policy == .cacheAllBeforeShow {
                 for i in 0..<self.numberOfFrames {
                     if let frame = self.imageProvider?.readImage(at: i) {
-                       self.cache[i] = frame.image
+                        self.cache[i] = frame.image
                     }
                 }
             }
             let proxy = BerryProxy(target: self)
+            self.link?.invalidate()
             self.link = CADisplayLink(target: proxy, selector: #selector(BerryAnimateImageView.render))
-            self.link!.add(to: RunLoop.main, forMode: RunLoopMode.commonModes)
+            self.link!.add(to: RunLoop.main, forMode: RunLoop.Mode.defaultRunLoopMode)
         }
     }
 }
+
 
 
