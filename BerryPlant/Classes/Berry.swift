@@ -46,7 +46,7 @@ extension UIImageView: UIAsyncable {
     
 }
 extension Berry where Base: UIImageView {
-    public func setImage(image: UIImage){
+    public func setImage(image: UIImage?){
         let task = self.submitTransaction {
             defer {
                 /// 任务完成, 重围任务
