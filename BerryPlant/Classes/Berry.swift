@@ -47,15 +47,22 @@ extension UIImageView: UIAsyncable {
 }
 extension Berry where Base: UIImageView {
     public func setImage(image: UIImage?){
-        let task = self.submitTransaction {
-            defer {
-                /// 任务完成, 重围任务
+        if let _image = image {
+            let task = self.submitTransaction {
+                defer {
+                    /// 任务完成, 重围任务
+                    self.base.task = nil
+                }
+                guard !(self.base.task?.isCancel ?? false) else { return }
+                self.base.image = _image
+            }
+            self.base.task = task
+        } else {
+            DispatchQueue.main.async {
+                self.base.image = nil
                 self.base.task = nil
             }
-            guard !(self.base.task?.isCancel ?? false) else { return }
-            self.base.image = image
         }
-        self.base.task = task
     }
 }
 extension UIButton: UIAsyncable { }
