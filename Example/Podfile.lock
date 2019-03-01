@@ -1,16 +1,23 @@
 PODS:
-  - BerryPlant (1.0.0)
+  - BerryPlant (1.0.2)
+  - YYAsyncLayer (1.0)
 
 DEPENDENCIES:
   - BerryPlant (from `../`)
+  - YYAsyncLayer
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - YYAsyncLayer
 
 EXTERNAL SOURCES:
   BerryPlant:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BerryPlant: 560e7b108f47e3358a8c9301f01cbedfdfc58501
+  BerryPlant: 00c86e1f2778f191ced76f0af5c7d0ef8f256f2f
+  YYAsyncLayer: df6b01ebc695c5f6b4c15dd5c23fa3e081eb25c0
 
-PODFILE CHECKSUM: 72b6b73d4ba1494666f0c0dd013f14fb97a4266f
+PODFILE CHECKSUM: 69727cebf0816a7e32b26bb0fa03b452258c70d6
 
 COCOAPODS: 1.6.0.beta.2

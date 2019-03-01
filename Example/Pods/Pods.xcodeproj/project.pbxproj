@@ -7,30 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02B2D32D27C6E8FB48137652CD368F1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8D8B915FF40EB401BFF7A6C07CC4BAC /* Foundation.framework */; };
 		11B77805BEB61E99268D918CC081ABF0 /* BerryImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494ED55C10BA6FA3C73142BD9CE701B1 /* BerryImageProvider.swift */; };
 		1AD8E793A4EDEC32A29DFA09B3ECECCC /* BerryWebpDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535FF076104746A8BFA5F69287E1FEB9 /* BerryWebpDecoder.swift */; };
 		1F6737F60D36088522B6040E5A2C52AD /* BerryAPNGStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12499812E3D3657055339216B158B092 /* BerryAPNGStructure.swift */; };
+		2209E29B3E19A5E57131F091293B4054 /* YYAsyncLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7185CC1DFF3F6A77A3BF23D5B317B7C9 /* YYAsyncLayer.m */; };
 		2A11C0C425BF743CCA779DAE9895A434 /* Integer+Exensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EEB6EF1DA4217AF3A8905F5BCDA077 /* Integer+Exensions.swift */; };
 		2B398230E3010267E06370202F3CEF26 /* Berry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA58E5CAE93340B3A3D5FE95AFDC7E16 /* Berry.swift */; };
-		356DB543F03915B928CC13840F69207E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
-		3CCF66A7B00873AB058C445B96701443 /* Pods-BerryPlant_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 001FD4D97775850E532342A1048ED09A /* Pods-BerryPlant_Example-dummy.m */; };
+		356DB543F03915B928CC13840F69207E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8D8B915FF40EB401BFF7A6C07CC4BAC /* Foundation.framework */; };
 		51057A404FE87F521AF70D22A716B5F2 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5A234F69E5ABA1692CA1A880B6D52E /* String+Extensions.swift */; };
 		541E48A66A99662148E97325D66D6791 /* BerryGIFDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FCA0CAE1CDBC97D6128BC4CCAF18FD /* BerryGIFDecoder.swift */; };
+		5BE6652DA3BD492C2B437B3C2FA91C38 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F55B96F9FD27342C0F09BBB7DEE1AE /* QuartzCore.framework */; };
 		6E0D255F4B35A8D7378EBD2509FDB975 /* Pods-BerryPlant_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C26E8102EC1AF85F05123E7E35CF4CE /* Pods-BerryPlant_Tests-dummy.m */; };
+		7AEB70F89C2C84604D773058B6BF1199 /* YYSentinel.h in Headers */ = {isa = PBXBuildFile; fileRef = 23A8D8ADF7643FFFAA9D6720640245E1 /* YYSentinel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7FD053CBF2A5E2E64E367F265962D337 /* BerryDefaultDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB3ADD7D9E2AF76240BC64529D1E049 /* BerryDefaultDecoder.swift */; };
 		8787BD852E5B9CB6BA63ADEA110065F3 /* BerryAPNGDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312DAC3DC563073B8713CEB0C72FBA52 /* BerryAPNGDecoder.swift */; };
 		920CFBB8BB89CB580A0313481EF48E68 /* BerryProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A51209751CAEEE644F2362EF49E6B0E /* BerryProxy.swift */; };
+		95F29A4008721A0F9DE06F1D7004FE34 /* Pods-BerryPlant_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE7C8F988DEB3B014FFC239B3CD97EC /* Pods-BerryPlant_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		97D400EFBA8F3CB55BB9FC3E2D5459D2 /* YYAsyncLayer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B4F06CACB370110ECC3BFB5941680B3 /* YYAsyncLayer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9AC681077C2875FA857D04E9335B1A6E /* YYAsyncLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CEE0D76619A128273CC769EFA43549B /* YYAsyncLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A1AC7ECA96FAC759390A459FA796BE43 /* CFDictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFD38DEFB0E8DB97E78397266312D3 /* CFDictionary+Extensions.swift */; };
 		B14371AAE78DA02612A5DBFE65865DDE /* BerryPlant-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A0935D4629FC982003A6B31A609403DB /* BerryPlant-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B63D841B4603596B712E07DEA847BD34 /* BerryAnimateImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6110F8F80CBF98FA3D73499551E369 /* BerryAnimateImageView.swift */; };
-		BEF4EEB236671172A51BAC530EFB2373 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
+		B7206EEFC03523EACF66AE2B006FAA27 /* YYSentinel.m in Sources */ = {isa = PBXBuildFile; fileRef = 47705382E1B37D427E0C8B431AEAEE18 /* YYSentinel.m */; };
+		BC84814EA42128D43D9C1198FE603BDE /* YYAsyncLayer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 671A73E637295A1EAC61E02328A36065 /* YYAsyncLayer-dummy.m */; };
+		BEF4EEB236671172A51BAC530EFB2373 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8D8B915FF40EB401BFF7A6C07CC4BAC /* Foundation.framework */; };
+		C1ED50E9A65FA88EDE3E5A31ABE4DC50 /* YYTransaction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4388C0C13DEB4FB90C089E3719A3758E /* YYTransaction.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C2FF8121B03DEB640D6852876E08E1C4 /* Pods-BerryPlant_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DE24A01D7967926106ECA48B14845036 /* Pods-BerryPlant_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C92FAB186B78F1DFA78A65195D66E457 /* BerryTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BC65669B709B7DF35F4D4BC4758A5E /* BerryTransaction.swift */; };
+		D210614C71986065C07280AFBF252696 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A53654F6C69F2B1C06A517CAB5691730 /* UIKit.framework */; };
 		D4CCCE0A1A7A01CB4452D7DFC98AB3A1 /* BerryImageFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881842058C4867807F9DA9711C482E66 /* BerryImageFormat.swift */; };
-		D91B0902374AF70041D3AA6DF8894CBB /* Pods-BerryPlant_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE7C8F988DEB3B014FFC239B3CD97EC /* Pods-BerryPlant_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DF32128B699C5425BAB074652F8A7736 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
 		E980D95C376BCD8467BB8F27B9EC92AC /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5E054725E58156CB36FF34A617F209 /* Data+Extensions.swift */; };
 		EB1A3F9E3686B79B9BE0DFA5F6D0A12E /* BerryPlant-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8865F9606E8431D7B560A46566B93659 /* BerryPlant-dummy.m */; };
+		ED5CF08B15D2FF58A4C9522829960423 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8D8B915FF40EB401BFF7A6C07CC4BAC /* Foundation.framework */; };
+		F098B3C89C9727FE848D4E3A3021D835 /* Pods-BerryPlant_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 001FD4D97775850E532342A1048ED09A /* Pods-BerryPlant_Example-dummy.m */; };
+		F12BD8157D877F5B9CFC9604727941F3 /* YYTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF08770CCA0386FF7DB037E9351AE64 /* YYTransaction.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +52,14 @@
 			remoteGlobalIDString = 8B77681C3588EE85735D2D5FE433A9A5;
 			remoteInfo = BerryPlant;
 		};
-		594C6860DF77C467C5A196B06840B789 /* PBXContainerItemProxy */ = {
+		31D682A9D83970366E64361CD717F69B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F79041078AC0A85D5393D8D4FB4C6D21;
+			remoteInfo = YYAsyncLayer;
+		};
+		CA896270E9E3AB4A4DF13040778E9E6B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -55,18 +73,25 @@
 		01BC65669B709B7DF35F4D4BC4758A5E /* BerryTransaction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BerryTransaction.swift; sourceTree = "<group>"; };
 		0DE7C8F988DEB3B014FFC239B3CD97EC /* Pods-BerryPlant_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BerryPlant_Example-umbrella.h"; sourceTree = "<group>"; };
 		12499812E3D3657055339216B158B092 /* BerryAPNGStructure.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BerryAPNGStructure.swift; sourceTree = "<group>"; };
+		15C4EF2886F646441242E4BB22FBE6D1 /* YYAsyncLayer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = YYAsyncLayer.modulemap; sourceTree = "<group>"; };
 		18C85ED6C7A505BC4A2AC5C62290E1AF /* Pods-BerryPlant_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BerryPlant_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		1A51209751CAEEE644F2362EF49E6B0E /* BerryProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BerryProxy.swift; sourceTree = "<group>"; };
 		1B27AF34E4B70B315F82A048477A076A /* Pods-BerryPlant_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BerryPlant_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		1CBA8E49A9C11054072F96A141A51125 /* Pods-BerryPlant_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BerryPlant_Example-frameworks.sh"; sourceTree = "<group>"; };
+		23A8D8ADF7643FFFAA9D6720640245E1 /* YYSentinel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYSentinel.h; path = YYAsyncLayer/YYSentinel.h; sourceTree = "<group>"; };
 		2B5E054725E58156CB36FF34A617F209 /* Data+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		2C26E8102EC1AF85F05123E7E35CF4CE /* Pods-BerryPlant_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BerryPlant_Tests-dummy.m"; sourceTree = "<group>"; };
 		312DAC3DC563073B8713CEB0C72FBA52 /* BerryAPNGDecoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BerryAPNGDecoder.swift; sourceTree = "<group>"; };
 		3A8E4883DB438D2748C95F53BE90B695 /* BerryPlant-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "BerryPlant-Info.plist"; sourceTree = "<group>"; };
 		3BCEC5B62A8CF3C7B09290AC389E5AB5 /* Pods-BerryPlant_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BerryPlant_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		3C2760090B44E09ACD4EC4A1B7917394 /* BerryPlant.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BerryPlant.modulemap; sourceTree = "<group>"; };
-		467C3F8087F0D1DB4C2CCD461896EF38 /* Pods_BerryPlant_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BerryPlant_Example.framework; path = "Pods-BerryPlant_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4388C0C13DEB4FB90C089E3719A3758E /* YYTransaction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYTransaction.h; path = YYAsyncLayer/YYTransaction.h; sourceTree = "<group>"; };
+		47705382E1B37D427E0C8B431AEAEE18 /* YYSentinel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYSentinel.m; path = YYAsyncLayer/YYSentinel.m; sourceTree = "<group>"; };
+		48CB291F1C1432765CABE55648D7E800 /* Pods_BerryPlant_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BerryPlant_Example.framework; path = "Pods-BerryPlant_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		494ED55C10BA6FA3C73142BD9CE701B1 /* BerryImageProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BerryImageProvider.swift; sourceTree = "<group>"; };
+		4B4F06CACB370110ECC3BFB5941680B3 /* YYAsyncLayer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YYAsyncLayer-umbrella.h"; sourceTree = "<group>"; };
+		4D026D4404D099FF1C7EB8BF4005B753 /* BerryPlant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BerryPlant.framework; path = BerryPlant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EF4D8CD09EE30263F9A8373CF8C9438 /* YYAsyncLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = YYAsyncLayer.framework; path = YYAsyncLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B18C9197B45DBF7F5BE3AFC03444EE /* Pods-BerryPlant_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BerryPlant_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		535FF076104746A8BFA5F69287E1FEB9 /* BerryWebpDecoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BerryWebpDecoder.swift; sourceTree = "<group>"; };
 		5C6110F8F80CBF98FA3D73499551E369 /* BerryAnimateImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BerryAnimateImageView.swift; sourceTree = "<group>"; };
@@ -75,23 +100,31 @@
 		5EE46EC16E0C5657C872F6041106B7FE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		6116E47AEDBD96D32353D23948BF7037 /* Pods-BerryPlant_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BerryPlant_Tests-Info.plist"; sourceTree = "<group>"; };
 		61EEB6EF1DA4217AF3A8905F5BCDA077 /* Integer+Exensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Integer+Exensions.swift"; sourceTree = "<group>"; };
+		671A73E637295A1EAC61E02328A36065 /* YYAsyncLayer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "YYAsyncLayer-dummy.m"; sourceTree = "<group>"; };
+		704B15FD2A4E1FF257A433458E860E52 /* YYAsyncLayer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YYAsyncLayer.xcconfig; sourceTree = "<group>"; };
 		706BF93AF8D6B077CCF7343248E38C73 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		7185CC1DFF3F6A77A3BF23D5B317B7C9 /* YYAsyncLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYAsyncLayer.m; path = YYAsyncLayer/YYAsyncLayer.m; sourceTree = "<group>"; };
 		757BFF6AE9B902644711282009E7AACF /* Pods-BerryPlant_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BerryPlant_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		77A2443FD9B86DFC1556EF8BF18B4231 /* YYAsyncLayer-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "YYAsyncLayer-Info.plist"; sourceTree = "<group>"; };
+		83F55B96F9FD27342C0F09BBB7DEE1AE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		8677EC89ED4195F758B664362632889D /* BerryPlant-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BerryPlant-prefix.pch"; sourceTree = "<group>"; };
 		881842058C4867807F9DA9711C482E66 /* BerryImageFormat.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BerryImageFormat.swift; sourceTree = "<group>"; };
 		8865F9606E8431D7B560A46566B93659 /* BerryPlant-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BerryPlant-dummy.m"; sourceTree = "<group>"; };
+		8AAD31FD4C67868CAA49AD5D0D7E9BF7 /* Pods_BerryPlant_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BerryPlant_Tests.framework; path = "Pods-BerryPlant_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ADFD38DEFB0E8DB97E78397266312D3 /* CFDictionary+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CFDictionary+Extensions.swift"; sourceTree = "<group>"; };
 		8CCB45C990DCBC7BFD0070B30049CAAA /* Pods-BerryPlant_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BerryPlant_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		95A464B0BEA6ACC027B8CB07C0D12AA6 /* Pods-BerryPlant_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BerryPlant_Tests.modulemap"; sourceTree = "<group>"; };
+		9CEE0D76619A128273CC769EFA43549B /* YYAsyncLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYAsyncLayer.h; path = YYAsyncLayer/YYAsyncLayer.h; sourceTree = "<group>"; };
 		9F5A234F69E5ABA1692CA1A880B6D52E /* String+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		A0935D4629FC982003A6B31A609403DB /* BerryPlant-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BerryPlant-umbrella.h"; sourceTree = "<group>"; };
+		A53654F6C69F2B1C06A517CAB5691730 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		AC25342106E8A98ACB5B8309762CD343 /* Pods-BerryPlant_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BerryPlant_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		AF1DB7A9D45A30C5B22004B84C72DBAC /* Pods_BerryPlant_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BerryPlant_Tests.framework; path = "Pods-BerryPlant_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFF08770CCA0386FF7DB037E9351AE64 /* YYTransaction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYTransaction.m; path = YYAsyncLayer/YYTransaction.m; sourceTree = "<group>"; };
 		B36AB396275697EEE1A5B13BA8A38FE3 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		B3F67D986133E8853492EAA8FD0FFB4E /* BerryPlant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BerryPlant.framework; path = BerryPlant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8D8B915FF40EB401BFF7A6C07CC4BAC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		C58647697415E89BAFB99CE7A09F918D /* BerryPlant.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BerryPlant.xcconfig; sourceTree = "<group>"; };
 		D0284CB3E2A1F47E838463A30185E5AB /* Pods-BerryPlant_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BerryPlant_Example.release.xcconfig"; sourceTree = "<group>"; };
-		D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D35E08C2959BAF0698DD8F848AA6E062 /* YYAsyncLayer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YYAsyncLayer-prefix.pch"; sourceTree = "<group>"; };
 		D8FCA0CAE1CDBC97D6128BC4CCAF18FD /* BerryGIFDecoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BerryGIFDecoder.swift; sourceTree = "<group>"; };
 		DE24A01D7967926106ECA48B14845036 /* Pods-BerryPlant_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BerryPlant_Tests-umbrella.h"; sourceTree = "<group>"; };
 		DF68F99F90055FA05CF4CC311DC1F613 /* BerryPlant.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = BerryPlant.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -109,14 +142,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		60C94439F5E6F0AFAD34755D6F19E94B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DF32128B699C5425BAB074652F8A7736 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7102906384F1ABB7916BD211B56FA938 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -125,9 +150,45 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		998450659ABA6674727E1E6388345FFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02B2D32D27C6E8FB48137652CD368F1C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB3371ED3F07FE14D01FF79CF9F1C870 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED5CF08B15D2FF58A4C9522829960423 /* Foundation.framework in Frameworks */,
+				5BE6652DA3BD492C2B437B3C2FA91C38 /* QuartzCore.framework in Frameworks */,
+				D210614C71986065C07280AFBF252696 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A0F0E5DCBA76B02B283B8198F52B906 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				833904DD2E794D4D355DCA6C74E76F5A /* YYAsyncLayer */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		0D7A87A398F0D91F1E1B327DC5AD954E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				B8D8B915FF40EB401BFF7A6C07CC4BAC /* Foundation.framework */,
+				83F55B96F9FD27342C0F09BBB7DEE1AE /* QuartzCore.framework */,
+				A53654F6C69F2B1C06A517CAB5691730 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
 		111B975456E45771EED034406968DA8F /* Pods-BerryPlant_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +204,14 @@
 			);
 			name = "Pods-BerryPlant_Tests";
 			path = "Target Support Files/Pods-BerryPlant_Tests";
+			sourceTree = "<group>";
+		};
+		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D7A87A398F0D91F1E1B327DC5AD954E /* iOS */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		12F1DFDD6A0297D742651513A9E9F8F5 /* ImageDecode */ = {
@@ -179,14 +248,6 @@
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		44D5347904CF754D6785B84253F2574A /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
 		5AC2AB5DDFA08420847E57631A51BB0E /* APNG */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,15 +280,56 @@
 			path = WebP;
 			sourceTree = "<group>";
 		};
+		6C8E6F2BD09B934B110B72FF99A2A85A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				15C4EF2886F646441242E4BB22FBE6D1 /* YYAsyncLayer.modulemap */,
+				704B15FD2A4E1FF257A433458E860E52 /* YYAsyncLayer.xcconfig */,
+				671A73E637295A1EAC61E02328A36065 /* YYAsyncLayer-dummy.m */,
+				77A2443FD9B86DFC1556EF8BF18B4231 /* YYAsyncLayer-Info.plist */,
+				D35E08C2959BAF0698DD8F848AA6E062 /* YYAsyncLayer-prefix.pch */,
+				4B4F06CACB370110ECC3BFB5941680B3 /* YYAsyncLayer-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/YYAsyncLayer";
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				B36AB396275697EEE1A5B13BA8A38FE3 /* Podfile */,
 				3A4E7F38CA36375CA3A2CE04279C32BA /* Development Pods */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				BC1618B003B9338DF8E398558DFD8664 /* Products */,
+				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
+				0A0F0E5DCBA76B02B283B8198F52B906 /* Pods */,
+				8429535F4BBCC63632DB13EC60A59DB8 /* Products */,
 				AA4D508B1B9237AABEBB9F1D10286E21 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		833904DD2E794D4D355DCA6C74E76F5A /* YYAsyncLayer */ = {
+			isa = PBXGroup;
+			children = (
+				9CEE0D76619A128273CC769EFA43549B /* YYAsyncLayer.h */,
+				7185CC1DFF3F6A77A3BF23D5B317B7C9 /* YYAsyncLayer.m */,
+				23A8D8ADF7643FFFAA9D6720640245E1 /* YYSentinel.h */,
+				47705382E1B37D427E0C8B431AEAEE18 /* YYSentinel.m */,
+				4388C0C13DEB4FB90C089E3719A3758E /* YYTransaction.h */,
+				AFF08770CCA0386FF7DB037E9351AE64 /* YYTransaction.m */,
+				6C8E6F2BD09B934B110B72FF99A2A85A /* Support Files */,
+			);
+			name = YYAsyncLayer;
+			path = YYAsyncLayer;
+			sourceTree = "<group>";
+		};
+		8429535F4BBCC63632DB13EC60A59DB8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4D026D4404D099FF1C7EB8BF4005B753 /* BerryPlant.framework */,
+				48CB291F1C1432765CABE55648D7E800 /* Pods_BerryPlant_Example.framework */,
+				8AAD31FD4C67868CAA49AD5D0D7E9BF7 /* Pods_BerryPlant_Tests.framework */,
+				4EF4D8CD09EE30263F9A8373CF8C9438 /* YYAsyncLayer.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		A5DA337A0EF816BC638511F535F99BD6 /* GIF */ = {
@@ -246,24 +348,6 @@
 				111B975456E45771EED034406968DA8F /* Pods-BerryPlant_Tests */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		BC1618B003B9338DF8E398558DFD8664 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B3F67D986133E8853492EAA8FD0FFB4E /* BerryPlant.framework */,
-				467C3F8087F0D1DB4C2CCD461896EF38 /* Pods_BerryPlant_Example.framework */,
-				AF1DB7A9D45A30C5B22004B84C72DBAC /* Pods_BerryPlant_Tests.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				44D5347904CF754D6785B84253F2574A /* iOS */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		C0DB58E0910B118F87AA94AEEB8B5404 /* Unilitys */ = {
@@ -366,6 +450,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		51D90285525CEFB97EE7FB41672965AE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97D400EFBA8F3CB55BB9FC3E2D5459D2 /* YYAsyncLayer-umbrella.h in Headers */,
+				9AC681077C2875FA857D04E9335B1A6E /* YYAsyncLayer.h in Headers */,
+				7AEB70F89C2C84604D773058B6BF1199 /* YYSentinel.h in Headers */,
+				C1ED50E9A65FA88EDE3E5A31ABE4DC50 /* YYTransaction.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		666E1064873959EF6E5E9C5E5ACF9ABB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -374,11 +469,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		812C56FD302800634F66DC08740D4F64 /* Headers */ = {
+		DDA0CEC3E63B0D8C46E525DCD6D4E6EB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D91B0902374AF70041D3AA6DF8894CBB /* Pods-BerryPlant_Example-umbrella.h in Headers */,
+				95F29A4008721A0F9DE06F1D7004FE34 /* Pods-BerryPlant_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,7 +496,7 @@
 			);
 			name = "Pods-BerryPlant_Tests";
 			productName = "Pods-BerryPlant_Tests";
-			productReference = AF1DB7A9D45A30C5B22004B84C72DBAC /* Pods_BerryPlant_Tests.framework */;
+			productReference = 8AAD31FD4C67868CAA49AD5D0D7E9BF7 /* Pods_BerryPlant_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		8B77681C3588EE85735D2D5FE433A9A5 /* BerryPlant */ = {
@@ -419,26 +514,45 @@
 			);
 			name = BerryPlant;
 			productName = BerryPlant;
-			productReference = B3F67D986133E8853492EAA8FD0FFB4E /* BerryPlant.framework */;
+			productReference = 4D026D4404D099FF1C7EB8BF4005B753 /* BerryPlant.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		8CAF15C298CA0B316B3CDE3CC00A8861 /* Pods-BerryPlant_Example */ = {
+		F79041078AC0A85D5393D8D4FB4C6D21 /* YYAsyncLayer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F2E8395836FA459E0232865BDEDD7D0C /* Build configuration list for PBXNativeTarget "Pods-BerryPlant_Example" */;
+			buildConfigurationList = 49DDA28D6DBB9E4057B8D79FE160E501 /* Build configuration list for PBXNativeTarget "YYAsyncLayer" */;
 			buildPhases = (
-				812C56FD302800634F66DC08740D4F64 /* Headers */,
-				D4E7197A4E025AC9C8B081378724D9CD /* Sources */,
-				60C94439F5E6F0AFAD34755D6F19E94B /* Frameworks */,
-				0D4DFDEF3B4448C03B474F6CA3B674AF /* Resources */,
+				51D90285525CEFB97EE7FB41672965AE /* Headers */,
+				CA70CDF79BF60454C368DE6BC8CB01CB /* Sources */,
+				DB3371ED3F07FE14D01FF79CF9F1C870 /* Frameworks */,
+				387ACBA76097C5EE32BD7F7E0D106AAC /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C89E92EB903607A0E8A5F938CF5B899C /* PBXTargetDependency */,
+			);
+			name = YYAsyncLayer;
+			productName = YYAsyncLayer;
+			productReference = 4EF4D8CD09EE30263F9A8373CF8C9438 /* YYAsyncLayer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FF04D80CDBE99FB410532CD2A73E9916 /* Pods-BerryPlant_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E258B36285BA51DEAD68DEE074812BBF /* Build configuration list for PBXNativeTarget "Pods-BerryPlant_Example" */;
+			buildPhases = (
+				DDA0CEC3E63B0D8C46E525DCD6D4E6EB /* Headers */,
+				2D69F2E64D0740C23840D5E7ED1863C1 /* Sources */,
+				998450659ABA6674727E1E6388345FFE /* Frameworks */,
+				BF71F7EC49610C43851CB1AB0F715438 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1717032F34B14916300D35F95BF7E211 /* PBXTargetDependency */,
+				8F5EBCE96234636F334BB5B43A4350F5 /* PBXTargetDependency */,
 			);
 			name = "Pods-BerryPlant_Example";
 			productName = "Pods-BerryPlant_Example";
-			productReference = 467C3F8087F0D1DB4C2CCD461896EF38 /* Pods_BerryPlant_Example.framework */;
+			productReference = 48CB291F1C1432765CABE55648D7E800 /* Pods_BerryPlant_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -458,19 +572,20 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = BC1618B003B9338DF8E398558DFD8664 /* Products */;
+			productRefGroup = 8429535F4BBCC63632DB13EC60A59DB8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				8B77681C3588EE85735D2D5FE433A9A5 /* BerryPlant */,
-				8CAF15C298CA0B316B3CDE3CC00A8861 /* Pods-BerryPlant_Example */,
+				FF04D80CDBE99FB410532CD2A73E9916 /* Pods-BerryPlant_Example */,
 				3AFB4134F450CB5D51A3FF839CE4B726 /* Pods-BerryPlant_Tests */,
+				F79041078AC0A85D5393D8D4FB4C6D21 /* YYAsyncLayer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0D4DFDEF3B4448C03B474F6CA3B674AF /* Resources */ = {
+		387ACBA76097C5EE32BD7F7E0D106AAC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -491,9 +606,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BF71F7EC49610C43851CB1AB0F715438 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2D69F2E64D0740C23840D5E7ED1863C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F098B3C89C9727FE848D4E3A3021D835 /* Pods-BerryPlant_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		80CC28D28185A1A6644FC0BEE76FBF20 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -525,22 +655,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D4E7197A4E025AC9C8B081378724D9CD /* Sources */ = {
+		CA70CDF79BF60454C368DE6BC8CB01CB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CCF66A7B00873AB058C445B96701443 /* Pods-BerryPlant_Example-dummy.m in Sources */,
+				BC84814EA42128D43D9C1198FE603BDE /* YYAsyncLayer-dummy.m in Sources */,
+				2209E29B3E19A5E57131F091293B4054 /* YYAsyncLayer.m in Sources */,
+				B7206EEFC03523EACF66AE2B006FAA27 /* YYSentinel.m in Sources */,
+				F12BD8157D877F5B9CFC9604727941F3 /* YYTransaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C89E92EB903607A0E8A5F938CF5B899C /* PBXTargetDependency */ = {
+		1717032F34B14916300D35F95BF7E211 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = BerryPlant;
 			target = 8B77681C3588EE85735D2D5FE433A9A5 /* BerryPlant */;
-			targetProxy = 594C6860DF77C467C5A196B06840B789 /* PBXContainerItemProxy */;
+			targetProxy = CA896270E9E3AB4A4DF13040778E9E6B /* PBXContainerItemProxy */;
+		};
+		8F5EBCE96234636F334BB5B43A4350F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = YYAsyncLayer;
+			target = F79041078AC0A85D5393D8D4FB4C6D21 /* YYAsyncLayer */;
+			targetProxy = 31D682A9D83970366E64361CD717F69B /* PBXContainerItemProxy */;
 		};
 		FA80C45DD04F00EB3E507199ADC2360A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -647,6 +786,40 @@
 			};
 			name = Debug;
 		};
+		0AF43415537809255D4A18CA69675EF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0284CB3E2A1F47E838463A30185E5AB /* Pods-BerryPlant_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BerryPlant_Example/Pods-BerryPlant_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BerryPlant_Example/Pods-BerryPlant_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		0E1BA3E445F3545947682F01665525C0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 52B18C9197B45DBF7F5BE3AFC03444EE /* Pods-BerryPlant_Tests.release.xcconfig */;
@@ -714,72 +887,7 @@
 			};
 			name = Debug;
 		};
-		1A2037372B5D7D5B72F39A80E43B81B1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0284CB3E2A1F47E838463A30185E5AB /* Pods-BerryPlant_Example.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-BerryPlant_Example/Pods-BerryPlant_Example-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-BerryPlant_Example/Pods-BerryPlant_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		B05C212DEBCD69F379964643BF5BD3BF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C58647697415E89BAFB99CE7A09F918D /* BerryPlant.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/BerryPlant/BerryPlant-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/BerryPlant/BerryPlant-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/BerryPlant/BerryPlant.modulemap";
-				PRODUCT_MODULE_NAME = BerryPlant;
-				PRODUCT_NAME = BerryPlant;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		B38E223FDFFEF8E208CA6C585DA7781B /* Debug */ = {
+		7CE3FD1B3D08240722ADD766A3275354 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AC25342106E8A98ACB5B8309762CD343 /* Pods-BerryPlant_Example.debug.xcconfig */;
 			buildSettings = {
@@ -806,6 +914,37 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B05C212DEBCD69F379964643BF5BD3BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C58647697415E89BAFB99CE7A09F918D /* BerryPlant.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/BerryPlant/BerryPlant-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BerryPlant/BerryPlant-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/BerryPlant/BerryPlant.modulemap";
+				PRODUCT_MODULE_NAME = BerryPlant;
+				PRODUCT_NAME = BerryPlant;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -872,6 +1011,69 @@
 			};
 			name = Release;
 		};
+		E9131240968E9754A137CF32CAE771D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 704B15FD2A4E1FF257A433458E860E52 /* YYAsyncLayer.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/YYAsyncLayer/YYAsyncLayer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/YYAsyncLayer/YYAsyncLayer-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/YYAsyncLayer/YYAsyncLayer.modulemap";
+				PRODUCT_MODULE_NAME = YYAsyncLayer;
+				PRODUCT_NAME = YYAsyncLayer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F749A2A565B5599823B4FFE594CF3430 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 704B15FD2A4E1FF257A433458E860E52 /* YYAsyncLayer.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/YYAsyncLayer/YYAsyncLayer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/YYAsyncLayer/YYAsyncLayer-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/YYAsyncLayer/YYAsyncLayer.modulemap";
+				PRODUCT_MODULE_NAME = YYAsyncLayer;
+				PRODUCT_NAME = YYAsyncLayer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -902,11 +1104,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F2E8395836FA459E0232865BDEDD7D0C /* Build configuration list for PBXNativeTarget "Pods-BerryPlant_Example" */ = {
+		49DDA28D6DBB9E4057B8D79FE160E501 /* Build configuration list for PBXNativeTarget "YYAsyncLayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B38E223FDFFEF8E208CA6C585DA7781B /* Debug */,
-				1A2037372B5D7D5B72F39A80E43B81B1 /* Release */,
+				F749A2A565B5599823B4FFE594CF3430 /* Debug */,
+				E9131240968E9754A137CF32CAE771D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E258B36285BA51DEAD68DEE074812BBF /* Build configuration list for PBXNativeTarget "Pods-BerryPlant_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CE3FD1B3D08240722ADD766A3275354 /* Debug */,
+				0AF43415537809255D4A18CA69675EF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

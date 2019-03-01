@@ -425,10 +425,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-BerryPlant_Example/Pods-BerryPlant_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BerryPlant/BerryPlant.framework",
+				"${BUILT_PRODUCTS_DIR}/YYAsyncLayer/YYAsyncLayer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BerryPlant.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYAsyncLayer.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
