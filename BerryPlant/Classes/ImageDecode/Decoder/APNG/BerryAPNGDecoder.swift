@@ -72,6 +72,8 @@ public class BerryAPNGDecoder: BerryImageProvider {
         var offset = 8
         var stop = false
         var beforeIDATA = true
+        var firstFrameCover = false
+        var fcTLNum = 0
         while !stop {
             let chunkDataLength = UInt32.from(of: data, from: offset, to: offset + 4).bigToHost()
             let chunkLength = 4 + 4 + chunkDataLength + 4
@@ -87,11 +89,19 @@ public class BerryAPNGDecoder: BerryImageProvider {
             offset += numericCast(chunkLength)
             if chunk.type == "IDAT" {
                 beforeIDATA = false
+                if (fcTLNum != 0) {
+                    firstFrameCover = true
+                }
             }
             if chunk.type != "fcTL" && chunk.type != "fdAT" && chunk.type != "IDAT", chunk.type != "acTL" {
                 if beforeIDATA { common.appendFirstHalf(chunk) }
                 else { common.appendSecondHalf(chunk) }
             }
+            
+            if chunk.type == "fcTL" {
+                fcTLNum += 1
+            }
+            
             if chunk.type == "acTL" {
                 self.actl = BerryAPNGACTL(with: data.subdata(in: (chunk.start + 8)..<chunk.end - 4))
             }
@@ -100,15 +110,37 @@ public class BerryAPNGDecoder: BerryImageProvider {
             }
             
         }
-        for var i in 0..<chunks.count {
-            if chunks[i].type == "fcTL" {
-                frames.append(BerryAPNGFrame(idat: chunks[i + 1],
-                                        fctlData: self.data.subdata(in: (chunks[i].start + 8)..<chunks[i].end)))
-                i += 1
+        
+        var frameIndex = -1
+        //fdAT and IDat is allowed multiple.
+        for i in 0..<chunks.count {
+            switch chunks[i].type {
+            case "fcTL":
+                frameIndex += 1
+                let frame = BerryAPNGFrame(fctlData: self.data.subdata(in: (chunks[i].start + 8)..<chunks[i].end))
+                frames.append(frame)
+                break
+            case "fdAT":
+                let frame = frames[frameIndex]
+                frame.appendIDAT(chunks[i])
+                frame.chunkNum += 1
+                break
+            case "IDAT":
+                let frame = frames[frameIndex]
+                if (frame.apngFirstFrame == 0) {
+                    frame.apngFirstFrame = i
+                }
+                if (firstFrameCover) { //If no fcTL before, not include this IDAT.
+                    frame.appendIDAT(chunks[i])
+                    frame.chunkNum += 1
+                }
+                break
+            default:
+                break
             }
         }
     }
-    
+
     public func decode(at index: Int) -> CGImage? {
         guard frames.count > index else { return nil }
         let frame = frames[index]
