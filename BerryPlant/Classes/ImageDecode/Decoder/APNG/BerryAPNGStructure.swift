@@ -179,32 +179,35 @@ struct BerryAPNGCommon {
     }
     
     func appendIDAT(with frame: BerryAPNGFrame, from fileData: Data, to data: inout Data) {
-        let fdatData = fileData.subdata(in: frame.idat.start..<frame.idat.end)
-        if frame.isIDAT {
-            data.append(fdatData)
-        } else {
-            let dataLength = frame.idat.length - 16 //IDAT length
-            var resultData = Data()
-            var dataLengthLittleSequence = NSSwapHostIntToBig(dataLength)
-            withUnsafeBytes(of: &dataLengthLittleSequence) {
-                let buffer = [UInt8]($0)
-                resultData.append(contentsOf: buffer)
+        for i in 0..<frame.chunkNum {
+            let idat = frame.idat[i]
+            let fdatData = fileData.subdata(in: idat.start..<idat.end)
+            if idat.type == "IDAT" {
+                data.append(fdatData)
+            } else {
+                let dataLength = idat.length - 16 //IDAT length
+                var resultData = Data()
+                var dataLengthLittleSequence = NSSwapHostIntToBig(dataLength)
+                withUnsafeBytes(of: &dataLengthLittleSequence) {
+                    let buffer = [UInt8]($0)
+                    resultData.append(contentsOf: buffer)
+                }
+                let idat = ["I", "D", "A", "T"]
+                resultData.append(contentsOf: idat.map { UInt8.init(ascii: Unicode.Scalar.init($0)! ) })
+                //chunk data
+                let chunkDataStart = 12
+                let chunkDataEnd: Int = numericCast(12 + dataLength)
+                resultData.append(fdatData.subdata(in: chunkDataStart..<chunkDataEnd))
+                let bytes = resultData.copyAllBytes()
+                let crcValue = crc32(0, bytes + 4, numericCast(resultData.count) - 4)
+                bytes.deallocate()
+                var crc = NSSwapHostIntToBig(numericCast(crcValue))
+                withUnsafeBytes(of: &crc) {
+                    let buffer = [UInt8]($0)
+                    resultData.append(contentsOf: buffer)
+                }
+                data.append(resultData)
             }
-            let idat = ["I", "D", "A", "T"]
-            resultData.append(contentsOf: idat.map { UInt8.init(ascii: Unicode.Scalar.init($0)! ) })
-            //chunk data
-            let chunkDataStart = 12
-            let chunkDataEnd: Int = numericCast(12 + dataLength)
-            resultData.append(fdatData.subdata(in: chunkDataStart..<chunkDataEnd))
-            let bytes = resultData.copyAllBytes()
-            let crcValue = crc32(0, bytes + 4, numericCast(resultData.count) - 4)
-            bytes.deallocate()
-            var crc = NSSwapHostIntToBig(numericCast(crcValue))
-            withUnsafeBytes(of: &crc) {
-                let buffer = [UInt8]($0)
-                resultData.append(contentsOf: buffer)
-            }
-            data.append(resultData)
         }
     }
     /**
